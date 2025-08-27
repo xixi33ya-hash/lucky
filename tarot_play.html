@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>禅意塔罗 - 牌阵指南</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Serif SC', serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f0f7e6 0%, #e0f0e9 50%, #d1e8e2 100%);
+            color: #2c514c;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body:before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M20,20 C40,10 60,10 80,20 C90,40 90,60 80,80 C60,90 40,90 20,80 C10,60 10,40 20,20 Z" fill="none" stroke="%23a3c9b8" stroke-width="0.5" opacity="0.3"/></svg>');
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid #a3c9b8;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to right, #4a8e7f, #63a995);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #3a7a6d;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            letter-spacing: 3px;
+            font-family: 'Ma Shan Zheng', cursive;
+            font-weight: 400;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: #5a8a7e;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, #4a8e7f, transparent);
+            margin: 25px 0;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .intro {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid #a3c9b8;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .intro:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 C70 0 90 20 90 50 C90 80 70 100 50 100 C20 100 0 80 0 50 C0 20 20 0 50 0 Z" fill="%23d1e8e2" opacity="0.5"/></svg>') no-repeat;
+            background-size: contain;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .intro h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #3a7a6d;
+            font-size: 2rem;
+            position: relative;
+            z-index: 1;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #b8d5c7;
+        }
+        
+        .intro h2:after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(to right, #4a8e7f, #63a995);
+        }
+        
+        .intro p {
+            text-indent: 2em;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #2c514c;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .spread-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+        
+        .spread-btn {
+            padding: 12px 25px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #a3c9b8;
+            border-radius: 20px;
+            color: #3a7a6d;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(74, 142, 127, 0.1);
+            font-family: 'Noto Serif SC', serif;
+        }
+        
+        .spread-btn:hover {
+            background: rgba(180, 211, 190, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74, 142, 127, 0.2);
+        }
+        
+        .spread-btn.active {
+            background: linear-gradient(135deg, #4a8e7f 0%, #63a995 100%);
+            color: white;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(74, 142, 127, 0.3);
+        }
+        
+        .spread-content {
+            display: none;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid #a3c9b8;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .spread-content:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 C70 0 90 20 90 50 C90 80 70 100 50 100 C20 100 0 80 0 50 C0 20 20 0 50 0 Z" fill="%23d1e8e2" opacity="0.5"/></svg>') no-repeat;
+            background-size: contain;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .spread-content.active {
+            display: block;
+            animation: fadeIn 0.8s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .spread-title {
+            color: #3a7a6d;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+            z-index: 1;
+            border-bottom: 2px solid #b8d5c7;
+            font-weight: 400;
+        }
+        
+        .spread-title:after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(to right, #4a8e7f, #63a995);
+        }
+        
+        .spread-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 25px;
+        }
+        
+        .spread-description, .spread-uses {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            border: 1px dashed #80cbc4;
+        }
+        
+        .spread-uses h4, .spread-description h4 {
+            color: #3a7a6d;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .spread-layout {
+            width: 100%;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            border: 1px dashed #80cbc4;
+        }
+        
+        .card-positions {
+            position: relative;
+            width: 100%;
+            min-height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .card {
+            width: 90px;
+            height: 130px;
+            background: #e8f5f3;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 0.9rem;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 105, 92, 0.2);
+            transition: all 0.3s ease;
+            border: 1px solid #80cbc4;
+            position: relative;
+            color: #00796b;
+        }
+        
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            border: 1px solid #4db6ac;
+            border-radius: 5px;
+            pointer-events: none;
+        }
+        
+        .card:hover {
+            transform: scale(1.08);
+            z-index: 10;
+            box-shadow: 0 8px 16px rgba(0, 105, 92, 0.3);
+            background: #fff;
+        }
+        
+        .interpretation {
+            margin-top: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid #a3c9b8;
+            box-shadow: 0 4px 15px rgba(74, 142, 127, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .interpretation h4 {
+            color: #3a7a6d;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .bamboo-border {
+            background: rgba(163, 201, 184, 0.1);
+            padding: 15px;
+            border-radius: 15px;
+            border: 1px solid #a3c9b8;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .spread-uses h4, .spread-description h4 {
+            color: #3a7a6d;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .spread-uses ul li, .bamboo-border p {
+            color: #2c514c;
+            line-height: 1.6;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            color: #3a7a6d;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid #a3c9b8;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .spread-btn {
+                padding: 12px 20px;
+                font-size: 1rem;
+            }
+            
+            .card {
+                width: 70px;
+                height: 100px;
+                font-size: 0.7rem;
+            }
+            
+            .spread-title {
+                font-size: 1.8rem;
+            }
+        }
+        
+        .watermark {
+            position: absolute;
+            opacity: 0.03;
+            font-size: 18rem;
+            color: #004d40;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .wm1 {
+            top: 10%;
+            left: 5%;
+            transform: rotate(-15deg);
+        }
+        
+        .wm2 {
+            top: 40%;
+            right: 5%;
+            transform: rotate(10deg);
+        }
+        
+        .bamboo-border {
+            border-left: 12px solid;
+            border-image: repeating-linear-gradient(to bottom, #4db6ac, #4db6ac 10px, #e8f5f3 10px, #e8f5f3 20px) 1;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="watermark wm1">塔罗</div>
+    <div class="watermark wm2">禅意</div>
+    
+    <div class="container">
+        <header>
+            <h1>禅意塔罗</h1>
+            <p class="subtitle">东方禅意塔罗牌阵指南 - 探寻心灵深处的智慧</p>
+        </header>
+        
+        <!-- 顶部导航栏 -->
+        <nav class="top-navigation" style="background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 15px 30px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); border: 1px solid #a3c9b8;">
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap;">
+                <li><a href="index.html" style="text-decoration: none; color: #3a7a6d; font-size: 1.1rem; font-weight: 500; padding: 8px 16px; border-radius: 10px; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-home" style="margin-right: 6px;"></i>首页</a></li>
+                <li><a href="index.html#shangshangqian" style="text-decoration: none; color: #3a7a6d; font-size: 1.1rem; font-weight: 500; padding: 8px 16px; border-radius: 10px; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-ticket-alt" style="margin-right: 6px;"></i>上上签</a></li>
+                <li><a href="../company_name.html" style="text-decoration: none; color: #3a7a6d; font-size: 1.1rem; font-weight: 500; padding: 8px 16px; border-radius: 10px; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-building" style="margin-right: 6px;"></i>公司测名</a></li>
+                <li><a href="index.html#baby-naming" style="text-decoration: none; color: #3a7a6d; font-size: 1.1rem; font-weight: 500; padding: 8px 16px; border-radius: 10px; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-baby" style="margin-right: 6px;"></i>宝宝起名</a></li>
+                <li><a href="tarot.html" class="active" style="text-decoration: none; color: white; font-size: 1.1rem; font-weight: 500; padding: 8px 16px; border-radius: 10px; transition: all 0.3s ease; display: flex; align-items: center; background: linear-gradient(135deg, #4a8e7f 0%, #63a995 100%);"><i class="fas fa-moon" style="margin-right: 6px;"></i>塔罗牌</a></li>
+            </ul>
+        </nav>
+        
+        <!-- 添加导航栏悬停效果样式 -->
+        <style>
+            .top-navigation a:hover {
+                background: rgba(74, 142, 127, 0.1);
+                color: #2c514c;
+                transform: translateY(-1px);
+            }
+            
+            .top-navigation a.active {
+                background: linear-gradient(135deg, #4a8e7f 0%, #63a995 100%);
+                color: white;
+            }
+            
+            @media (max-width: 768px) {
+                .top-navigation ul {
+                    gap: 20px !important;
+                }
+                .top-navigation a {
+                    font-size: 1rem !important;
+                    padding: 6px 12px !important;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .top-navigation ul {
+                    gap: 10px !important;
+                    flex-direction: column;
+                }
+                .top-navigation a {
+                    font-size: 0.9rem !important;
+                    padding: 8px 12px !important;
+                    width: 100%;
+                    justify-content: center;
+                }
+            }
+        </style>
+        
+        <section class="intro">
+            <h2>塔罗牌阵之道</h2>
+            <div class="divider"></div>
+            <p>塔罗牌阵是塔罗读牌时使用的特定卡片布局模式，每一种牌阵都像是一幅心灵地图，指引我们探索内在的智慧。东方哲学强调天人合一，与塔罗牌阵揭示的宇宙规律不谋而合。</p>
+            <p>选择合适的牌阵如同选择一条修行路径，它帮助我们聚焦问题，从不同角度理解生命的奥秘。本指南将介绍五种经典牌阵，助您开启自我探索之旅。</p>
+        </section>
+        
+        <div class="spread-selector">
+            <button class="spread-btn active" data-spread="single">
+                <i class="fas fa-leaf"></i>单张牌阵
+            </button>
+            <button class="spread-btn" data-spread="three">
+                <i class="fas fa-tree"></i>三牌阵
+            </button>
+            <button class="spread-btn" data-spread="celtic">
+                <i class="fas fa-cross"></i>凯尔特十字
+            </button>
+            <button class="spread-btn" data-spread="relationship">
+                <i class="fas fa-heart"></i>关系牌阵
+            </button>
+            <button class="spread-btn" data-spread="horoscope">
+                <i class="fas fa-star"></i>星象牌阵
+            </button>
+        </div>
+        
+        <div id="single" class="spread-content active">
+            <h3 class="spread-title">单张牌阵</h3>
+            <div class="spread-info">
+                <div class="spread-description">
+                    <h4><i class="fas fa-info-circle"></i>牌阵描述</h4>
+                    <p>最简单的牌阵，只使用一张牌来回答一个特定问题或提供每日指导。这种牌阵体现了东方哲学中"大道至简"的智慧，专注于当下，从简单中见深刻。</p>
+                </div>
+                <div class="spread-uses">
+                    <h4><i class="fas fa-lightbulb"></i>适用场景</h4>
+                    <ul>
+                        <li>每日启示与冥想</li>
+                        <li>简单的是/否问题</li>
+                        <li>快速洞察某种情况</li>
+                        <li>初学者练习与熟悉牌意</li>
+                        <li>晨间或睡前的心灵指引</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="spread-layout">
+                <div class="card-positions">
+                    <div class="card">1. 核心讯息<br>当下最重要的指引</div>
+                </div>
+            </div>
+            <div class="interpretation">
+                <h4><i class="fas fa-book-open"></i>解读方法</h4>
+                <div class="bamboo-border">
+                    <p>静心凝神，深呼吸三次，将问题聚焦于心中。洗牌后抽取一张牌，这张牌代表了当前情况的核心能量、答案或建议。</p>
+                    <p>正位通常表示积极或肯定的能量，逆位则可能表示挑战或需要警惕的方面。不必过度分析，感受牌面图像带给你的第一直觉，往往最准确。</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="three" class="spread-content">
+            <h3 class="spread-title">三牌阵</h3>
+            <div class="spread-info">
+                <div class="spread-description">
+                    <h4><i class="fas fa-info-circle"></i>牌阵描述</h4>
+                    <p>经典的时间流牌阵，使用三张牌分别代表过去、现在和未来。这种牌阵蕴含着东方"三世"哲学思想——过去因、现在果、未来缘，帮助理解事物发展的因果脉络。</p>
+                </div>
+                <div class="spread-uses">
+                    <h4><i class="fas fa-lightbulb"></i>适用场景</h4>
+                    <ul>
+                        <li>了解问题的发展过程与来龙去脉</li>
+                        <li>看清当前情况的因果联系</li>
+                        <li>预测短期内的可能结果</li>
+                        <li>大多数一般性问题的探索</li>
+                        <li>自我成长与反思</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="spread-layout">
+                <div class="card-positions">
+                    <div class="card">1. 过去<br>已发生的影响</div>
+                    <div class="card">2. 现在<br>当前状况</div>
+                    <div class="card">3. 未来<br>可能的发展</div>
+                </div>
+            </div>
+            <div class="interpretation">
+                <h4><i class="fas fa-book-open"></i>解读方法</h4>
+                <div class="bamboo-border">
+                    <p>第一张牌代表过去，显示影响当前情况的过去事件或能量。第二张牌代表现在，显示当前状况的核心能量。第三张牌代表未来，显示如果当前路径继续下去可能发生的结果。</p>
+                    <p>解读时注意三张牌之间的关联性，它们往往讲述一个连贯的故事。过去牌解释现状的成因，现在牌展示应对方式，未来牌提示可能的结果与转变契机。</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="celtic" class="spread-content">
+            <h3 class="spread-title">凯尔特十字牌阵</h3>
+            <div class="spread-info">
+                <div class="spread-description">
+                    <h4><i class="fas fa-info-circle"></i>牌阵描述</h4>
+                    <p>最著名和复杂的塔罗牌阵之一，使用十张牌提供问题的全面视图。这个牌阵犹如一幅曼荼罗，从核心到外围，从内在到外在，从过去到未来，全方位解析问题的各个层面。</p>
+                </div>
+                <div class="spread-uses">
+                    <h4><i class="fas fa-lightbulb"></i>适用场景</h4>
+                    <ul>
+                        <li>复杂问题的深入分析</li>
+                        <li>人生重大决策与转折点</li>
+                        <li>了解问题的多层次因素</li>
+                        <li>全面的人生指导与规划</li>
+                        <li>深度自我探索与灵性成长</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="spread-layout">
+                <div class="card-positions">
+                    <div class="card" style="position:static;">1. 核心<br>当前情况本质</div>
+                    <div class="card" style="position:static;">2. 挑战<br>跨越的障碍</div>
+                    <div class="card" style="position:static;">3. 基础<br>潜意识影响</div>
+                    <div class="card" style="position:static;">4. 过去<br>近期事件</div>
+                    <div class="card" style="position:static;">5. 目标<br>可能成就</div>
+                    <div class="card" style="position:static;">6. 未来<br>近期发展</div>
+                    <div class="card" style="position:static;">7. 自我<br>态度立场</div>
+                    <div class="card" style="position:static;">8. 环境<br>外部影响</div>
+                    <div class="card" style="position:static;">9. 希望<br>期望恐惧</div>
+                    <div class="card" style="position:static;">10. 结果<br>最终 outcome</div>
+                </div>
+            </div>
+            <div class="interpretation">
+                <h4><i class="fas fa-book-open"></i>解读方法</h4>
+                <div class="bamboo-border">
+                    <p>凯尔特十字牌阵的解读较为复杂，需要综合考虑各张牌的位置意义和相互关系。通常从中心牌开始，逐步向外解读。</p>
+                    <p>每张牌代表一个特定方面：1.当前情况核心；2.直接挑战；3.基础/根源；4.近期过去；5.可能未来；6.近期未来；7.问卜者态度；8.外部环境；9.希望或恐惧；10.最终结果。</p>
+                    <p>解读时注意牌阵左右两侧的平衡，以及牌与牌之间的相互影响。这个牌阵往往能揭示问题的深层结构和潜在解决方案。</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="relationship" class="spread-content">
+            <h3 class="spread-title">关系牌阵</h3>
+            <div class="spread-info">
+                <div class="spread-description">
+                    <h4><i class="fas fa-info-circle"></i>牌阵描述</h4>
+                    <p>专门为分析人际关系设计的牌阵，特别适合爱情、友谊、家庭或工作关系的探索。这个牌阵体现了东方哲学中"阴阳平衡"的思想，关注双方能量的互动与和谐。</p>
+                </div>
+                <div class="spread-uses">
+                    <h4><i class="fas fa-lightbulb"></i>适用场景</h4>
+                    <ul>
+                        <li>爱情关系的现状与未来</li>
+                        <li>友谊的深度与发展方向</li>
+                        <li>家庭关系的和谐与挑战</li>
+                        <li>工作合作与同事关系</li>
+                        <li>任何需要深入理解的双边关系</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="spread-layout">
+                <div class="card-positions">
+                    <div class="card">1. 问卜者<br>自我在关系中的状态</div>
+                    <div class="card">2. 对方<br>对方在关系中的状态</div>
+                    <div class="card">3. 关系现状<br>当前连接状态</div>
+                    <div class="card">4. 关系基础<br>共同的根基</div>
+                    <div class="card">5. 挑战<br>需要克服的障碍</div>
+                    <div class="card">6. 未来<br>可能的发展方向</div>
+                </div>
+            </div>
+            <div class="interpretation">
+                <h4><i class="fas fa-book-open"></i>解读方法</h4>
+                <div class="bamboo-border">
+                    <p>关系牌阵专注于两人之间的能量动态。第一张牌代表问卜者在关系中的角色和态度，第二张牌代表对方的角色和态度。</p>
+                    <p>第三张牌描述关系的当前状态，第四张牌揭示关系的基础和共同点，第五张牌显示需要面对的挑战或障碍，第六张牌指出关系可能的发展方向。</p>
+                    <p>解读时特别注意两张代表个人的牌之间的互动，以及它们如何影响关系牌。这个牌阵能帮助理解关系的平衡与否，以及如何改善连接。</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="horoscope" class="spread-content">
+            <h3 class="spread-title">星象牌阵</h3>
+            <div class="spread-info">
+                <div class="spread-description">
+                    <h4><i class="fas fa-info-circle"></i>牌阵描述</h4>
+                    <p>基于占星学原理设计的牌阵，将十二宫位的概念融入塔罗解读中。这个牌阵犹如一个小型的天宫图，从生命各个领域提供全面的指导，体现东方"天人相应"的哲学思想。</p>
+                </div>
+                <div class="spread-uses">
+                    <h4><i class="fas fa-lightbulb"></i>适用场景</h4>
+                    <ul>
+                        <li>全面了解生活各个领域的状态</li>
+                        <li>寻找不同生活领域之间的关联</li>
+                        <li>年、月、周度的综合运势解读</li>
+                        <li>人生重大阶段的全面评估</li>
+                        <li>寻找生活的平衡与和谐</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="spread-layout">
+                <div class="card-positions">
+                    <div class="card">1. 自我<br>身份与个性</div>
+                    <div class="card">2. 财富<br>物质资源</div>
+                    <div class="card">3. 沟通<br>学习与交流</div>
+                    <div class="card">4. 家庭<br>根源与安全感</div>
+                    <div class="card">5. 创意<br>自我表达</div>
+                    <div class="card">6. 健康<br日常工作</div>
+                    <div class="card">7. 关系<br>伙伴关系</div>
+                    <div class="card">8. 转变<br>深层变化</div>
+                    <div class="card">9. 智慧<br>哲学与旅行</div>
+                    <div class="card">10. 事业<br>社会地位</div>
+                    <div class="card">11. 社交<br>朋友与团体</div>
+                    <div class="card">12. 潜意识<br>内在世界</div>
+                </div>
+            </div>
+            <div class="interpretation">
+                <h4><i class="fas fa-book-open"></i>解读方法</h4>
+                <div class="bamboo-border">
+                    <p>星象牌阵对应占星学的十二宫位，每个位置代表生活的特定领域。第一宫代表自我形象和个性，第二宫代表物质和财富，以此类推。</p>
+                    <p>解读时可以从整体上观察哪个生活领域牌面最强或最弱，也可以专注于特定领域。注意牌与牌之间的模式，例如相同数字或花色的牌出现在相关生活领域。</p>
+                    <p>这个牌阵提供了生活的全貌，帮助发现不同生活领域之间的关联，以及如何达到更好的平衡。</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2023 禅意塔罗 | 东方智慧与塔罗艺术的融合</p>
+            <p>塔罗解读是一门艺术，需要直觉、练习和对符号的理解。本内容仅供参考和心灵成长目的。</p>
+            <div class="divider" style="width: 50%; margin: 20px auto;"></div>
+            <p><i class="fas fa-quote-left"></i> 观天之道，执天之行，尽矣。 ——《阴符经》 <i class="fas fa-quote-right"></i></p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const spreadButtons = document.querySelectorAll('.spread-btn');
+            const spreadContents = document.querySelectorAll('.spread-content');
+            
+            spreadButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const spreadId = this.getAttribute('data-spread');
+                    
+                    // 更新按钮状态
+                    spreadButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // 更新内容显示
+                    spreadContents.forEach(content => {
+                        content.classList.remove('active');
+                        if (content.id === spreadId) {
+                            content.classList.add('active');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

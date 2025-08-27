@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>禅意生活 - 东方智慧测算</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;700&display=swap">
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Serif SC', serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f0f7e6 0%, #e0f0e9 50%, #d1e8e2 100%);
+            color: #2c514c;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body:before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M20,20 C40,10 60,10 80,20 C90,40 90,60 80,80 C60,90 40,90 20,80 C10,60 10,40 20,20 Z" fill="none" stroke="%23a3c9b8" stroke-width="0.5" opacity="0.3"/></svg>');
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid #a3c9b8;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to right, #4a8e7f, #63a995);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            color: #3a7a6d;
+            margin-bottom: 15px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            font-family: 'Ma Shan Zheng', cursive;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: #5a8a7e;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+        
+        .tagline {
+            font-style: italic;
+            color: #7a9c91;
+            margin-top: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .main-content {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .section-container {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid #a3c9b8;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-container:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 C70 0 90 20 90 50 C90 80 70 100 50 100 C20 100 0 80 0 50 C0 20 20 0 50 0 Z" fill="%23d1e8e2" opacity="0.5"/></svg>') no-repeat;
+            background-size: contain;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        h2 {
+            color: #3a7a6d;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #b8d5c7;
+            font-weight: 400;
+            position: relative;
+            z-index: 1;
+        }
+        
+        h2:after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(to right, #4a8e7f, #63a995);
+        }
+        
+        /* 按钮样式 */
+        button, .btn {
+            background: linear-gradient(135deg, #4a8e7f 0%, #63a995 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(74, 142, 127, 0.3);
+            font-family: 'Noto Serif SC', serif;
+            position: relative;
+            z-index: 1;
+        }
+        
+        button:hover, .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74, 142, 127, 0.4);
+            background: linear-gradient(135deg, #3a7a6d 0%, #4a8e7f 100%);
+        }
+        
+        /* 表单样式 */
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #b8d5c7;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: 'Noto Serif SC', serif;
+            background: rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease;
+            color: #2c514c;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #4a8e7f;
+            background: white;
+            box-shadow: 0 0 10px rgba(74, 142, 127, 0.2);
+        }
+        
+        /* 卡片样式 */
+        .name-card, .package, .result-item {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #b8d5c7;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .name-card:hover, .package:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        /* 评分条样式 */
+        .score-bar {
+            background: linear-gradient(to right, #e0f0e9, #d1e8e2);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .score-fill {
+            background: linear-gradient(to right, #4a8e7f, #63a995);
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.8s ease;
+            position: relative;
+        }
+        
+        .score-fill:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%);
+            background-size: 10px 10px;
+            animation: move 1s linear infinite;
+        }
+        
+        @keyframes move {
+            0% { background-position: 0 0; }
+            100% { background-position: 10px 10px; }
+        }
+        
+        /* 价格样式 */
+        .price {
+            color: #4a8e7f;
+            font-weight: bold;
+            font-size: 1.4rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* 标签样式 */
+        .label {
+            color: #3a7a6d;
+            font-weight: 600;
+            margin-right: 10px;
+        }
+        
+        /* 图片样式 */
+        .baby-image {
+            border-radius: 50%;
+            border: 3px solid #b8d5c7;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .baby-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* 特殊背景区域 */
+        .premium-results {
+            background: linear-gradient(135deg, rgba(74, 142, 127, 0.1) 0%, rgba(99, 169, 149, 0.1) 100%);
+            border: 1px solid rgba(74, 142, 127, 0.2);
+        }
+        
+        .ai-inspiration {
+            background: linear-gradient(135deg, rgba(58, 122, 109, 0.1) 0%, rgba(90, 138, 126, 0.1) 100%);
+            border: 1px solid rgba(58, 122, 109, 0.2);
+        }
+        .ai-inspiration {
+            background: linear-gradient(135deg, rgba(58, 122, 109, 0.1) 0%, rgba(90, 138, 126, 0.1) 100%);
+            border: 1px solid rgba(58, 122, 109, 0.2);
+        }
+        
+        /* 响应式布局 */
+        .naming-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        @media (min-width: 768px) {
+            .naming-container {
+                flex-direction: row;
+            }
+            .naming-form, #namingResults {
+                flex: 1;
+            }
+        }
+        
+        .date-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        /* 新增样式 - 加载和结果显示 */
+        .loading {
+            text-align: center;
+            padding: 20px;
+            color: #4a8e7f;
+            font-size: 1.1rem;
+            animation: pulse 1.5s ease-in-out infinite alternate;
+        }
+        
+        @keyframes pulse {
+            from { opacity: 0.6; }
+            to { opacity: 1; }
+        }
+        
+        /* 名字卡片样式增强 */
+        .name-card.best {
+            border: 2px solid #4a8e7f;
+            background: linear-gradient(135deg, rgba(74, 142, 127, 0.15) 0%, rgba(99, 169, 149, 0.15) 100%);
+            position: relative;
+        }
+        
+        .name-card.best::before {
+            content: "🏆";
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #4a8e7f;
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+        
+        .name-card .name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #3a7a6d;
+            margin-bottom: 5px;
+        }
+        
+        .name-card .score {
+            color: #4a8e7f;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .name-card .meaning {
+            color: #5a8a7e;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+        /* 八字分析样式 */
+        .bazi-analysis {
+            background: rgba(58, 122, 109, 0.1);
+            border: 1px solid rgba(58, 122, 109, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .bazi-analysis h4 {
+            color: #3a7a6d;
+            margin-bottom: 15px;
+        }
+        
+        .bazi-analysis .analysis-content p {
+            margin: 8px 0;
+            color: #2c514c;
+            line-height: 1.5;
+        }
+        
+        /* 自定义起名样式 */
+        .custom-naming {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .custom-naming .suggestions {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: left;
+        }
+        
+        .custom-naming .suggestions ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .custom-naming .suggestions li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e0f0e9;
+        }
+        
+        .custom-naming .suggestions li:last-child {
+            border-bottom: none;
+        }
+        
+        .date-selector select,
+        .date-selector input {
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .help-text {
+            font-size: 12px;
+            color: #7a9c91;
+            margin-top: 5px;
+            font-style: italic;
+        }
+        
+        .name-suggestions {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .name-card h5 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #3a7a6d;
+            font-weight: 500;
+        }
+        
+        .name-details {
+            font-size: 14px;
+            color: #5a8a7e;
+        }
+        
+        .name-score {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .payment-options {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .package {
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+        }
+        
+        .naming-history {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .history-item {
+            padding: 8px 15px;
+            background: rgba(74, 142, 127, 0.1);
+            border-radius: 20px;
+            font-size: 14px;
+            color: #3a7a6d;
+            border: 1px solid rgba(74, 142, 127, 0.2);
+        }
+        
+        .history-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #b8d5c7;
+        }
+        
+        .baby-image-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .baby-image {
+            width: 120px;
+            height: 120px;
+        }
+        
+        .favorite-btn {
+            background: none;
+            border: none;
+            color: #ff9800;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .favorite-btn:hover {
+            color: #f57c00;
+            transform: scale(1.2);
+        }
+        
+        .fortune-test {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .fortune-test button {
+            background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+        }
+        
+        /* 响应式导航样式 */
+        @media (max-width: 768px) {
+            .nav-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 10px !important;
+            }
+            .nav-card {
+                padding: 15px !important;
+            }
+            .nav-card .nav-icon {
+                font-size: 2rem !important;
+                margin-bottom: 8px !important;
+            }
+            .nav-card h3 {
+                font-size: 1rem !important;
+                margin-bottom: 3px !important;
+            }
+            .nav-card p {
+                font-size: 0.8rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+        
+        /* 顶部导航栏样式 */
+        .top-navigation a:hover {
+            background: rgba(74, 142, 127, 0.1);
+            color: #2c514c;
+            transform: translateY(-1px);
+        }
+        
+        .top-navigation a.active {
+            background: linear-gradient(135deg, #4a8e7f 0%, #63a995 100%);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .top-navigation ul {
+                gap: 20px !important;
+            }
+            .top-navigation a {
+                font-size: 1rem !important;
+                padding: 6px 12px !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .top-navigation ul {
+                gap: 10px !important;
+                flex-direction: column;
+            }
+            .top-navigation a {
+                font-size: 0.9rem !important;
+                padding: 8px 12px !important;
+                width: 100%;
+                justify-content: center;
+            }
+        }
+</style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>禅意生活</h1>
+            <p class="subtitle">东方智慧测算平台</p>
+            <p class="tagline">探索传统文化的智慧，指引现代生活的方向</p>
+        </header>
+        
+        <!-- 顶部导航栏 -->
+        <nav class="top-navigation" style="background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 15px 30px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); border: 1px solid #a3c9b8;">
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap;">
+                <li><a href="#" onclick="goHome()" style="text-decoration: none; color: #3a7a6d; font-size: 1.1rem; font-weight: 500; padding: 8px 16px; border-radius: 10px; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-home" style="margin-right: 6px;"></i>首页</a></li>
+                <li><a href="#shangshangqian" onclick="showModule('shangshangqian')" style="text-decoration: none; color: #3a7a6d; font-size: 1.1rem; font-weight: 500; padding: 8px 16px; border-radius: 10px; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-ticket-alt" style="margin-right: 6px;"></i>上上签</a></li>
+                <li><a href="../company_name.html" style="text-decoration: none; color: #3a7a6d; font-size: 1.1rem; font-weight: 500; padding: 8px 16px; border-radius: 10px; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-building" style="margin-right: 6px;"></i>公司测名</a></li>
+                <li><a href="#baby-naming" onclick="showModule('baby-naming')" style="text-decoration: none; color: #3a7a6d; font-size: 1.1rem; font-weight: 500; padding: 8px 16px; border-radius: 10px; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-baby" style="margin-right: 6px;"></i>宝宝起名</a></li>
+                <li><a href="tarot.html" style="text-decoration: none; color: #3a7a6d; font-size: 1.1rem; font-weight: 500; padding: 8px 16px; border-radius: 10px; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-moon" style="margin-right: 6px;"></i>塔罗牌</a></li>
+            </ul>
+        </nav>
+        
+        <!-- 导航菜单 -->
+        <nav class="main-navigation" style="background: rgba(255, 255, 255, 0.9); border-radius: 20px; padding: 25px; margin-bottom: 30px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); border: 1px solid #a3c9b8;">
+            <div class="nav-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; max-width: 1000px; margin: 0 auto;">
+                <a href="#shangshangqian" class="nav-card" onclick="showModule('shangshangqian')" style="text-decoration: none; color: inherit; display: block; background: rgba(255, 255, 255, 0.95); border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s ease; border: 1px solid #b8d5c7; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); cursor: pointer;">
+                    <div class="nav-icon" style="font-size: 2.5rem; color: #4a8e7f; margin-bottom: 10px;">🎋</div>
+                    <h3 style="color: #3a7a6d; margin-bottom: 5px; font-size: 1.2rem; font-weight: 500;">上上签</h3>
+                    <p style="color: #7a9c91; font-size: 0.9rem; line-height: 1.3;">求签问卜</p>
+                </a>
+                
+                <a href="../company_name.html" class="nav-card" style="text-decoration: none; color: inherit; display: block; background: rgba(255, 255, 255, 0.95); border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s ease; border: 1px solid #b8d5c7; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); cursor: pointer;">
+                    <div class="nav-icon" style="font-size: 2.5rem; color: #4a8e7f; margin-bottom: 10px;">🏢</div>
+                    <h3 style="color: #3a7a6d; margin-bottom: 5px; font-size: 1.2rem; font-weight: 500;">公司测名</h3>
+                    <p style="color: #7a9c91; font-size: 0.9rem; line-height: 1.3;">企业命名</p>
+                </a>
+                
+                <a href="tarot.html" class="nav-card" style="text-decoration: none; color: inherit; display: block; background: rgba(255, 255, 255, 0.95); border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s ease; border: 1px solid #b8d5c7; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); cursor: pointer;">
+                    <div class="nav-icon" style="font-size: 2.5rem; color: #4a8e7f; margin-bottom: 10px;">🌙</div>
+                    <h3 style="color: #3a7a6d; margin-bottom: 5px; font-size: 1.2rem; font-weight: 500;">塔罗牌</h3>
+                    <p style="color: #7a9c91; font-size: 0.9rem; line-height: 1.3;">神秘占卜</p>
+                </a>
+                
+                <a href="#baby-naming" class="nav-card" onclick="showModule('baby-naming')" style="text-decoration: none; color: inherit; display: block; background: rgba(255, 255, 255, 0.95); border-radius: 15px; padding: 20px; text-align: center; transition: all 0.3s ease; border: 1px solid #b8d5c7; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); cursor: pointer;">
+                    <div class="nav-icon" style="font-size: 2.5rem; color: #4a8e7f; margin-bottom: 10px;">👶</div>
+                    <h3 style="color: #3a7a6d; margin-bottom: 5px; font-size: 1.2rem; font-weight: 500;">宝宝起名</h3>
+                    <p style="color: #7a9c91; font-size: 0.9rem; line-height: 1.3;">新生祝福</p>
+                </a>
+            </div>
+        </nav>
+        
+        <!-- 功能模块区域 (隐藏，可以根据需要显示) -->
+        <div class="modules-container" style="display: none;">
+            <!-- 上上签模块 -->
+            <div class="section-container" id="shangshangqian-module" style="display: none;">
+                <h2><i class="fas fa-ticket-alt"></i> 上上签</h2>
+                <div class="temple" style="text-align: center; margin: 30px 0;">
+                    <div class="xianzi-image" style="margin-bottom: 20px;">
+                        <img src="lucky/xianzi.png" alt="仙子" style="width: 150px; height: 150px; border-radius: 50%; border: 3px solid #b8d5c7; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="buddha" style="display: none; font-size: 3rem; color: #4a8e7f;">🧚‍♀️</div>
+                    </div>
+                    <div class="lottery-container">
+                        <button id="drawLottery" class="btn">抽 签</button>
+                        <button id="resetLottery" class="btn" style="margin-left: 10px; background: rgba(163, 201, 184, 0.6);" onclick="resetLottery()">重新抽签</button>
+                    </div>
+                </div>
+                <div id="lotteryResult" class="lottery-result" style="margin-top: 20px; text-align: center; display: none;">
+                    <div class="sign-card" style="background: rgba(255, 255, 255, 0.95); border-radius: 15px; padding: 25px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); border: 1px solid #b8d5c7; margin: 20px auto; max-width: 600px;">
+                        <h3 id="signTitle" style="color: #3a7a6d; margin-bottom: 15px;"></h3>
+                        <div id="signLuck" style="display: inline-block; padding: 6px 15px; border-radius: 20px; margin-bottom: 15px; font-weight: bold;"></div>
+                        <div id="signPoem" style="font-style: italic; color: #5a8a7e; line-height: 1.8; margin-bottom: 20px; font-size: 1.1rem; padding: 15px; background: rgba(163, 201, 184, 0.1); border-radius: 10px;"></div>
+                        <div id="signExplain" style="color: #2c514c; margin-bottom: 20px; line-height: 1.6;"></div>
+                        <div id="signScope" style="text-align: left;">
+                            <h4 style="color: #3a7a6d; margin-bottom: 15px; text-align: center;">各方面指引</h4>
+                            <div class="scope-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 宝宝起名模块 -->
+            <div class="section-container" id="baby-naming-module" style="display: none;">
+                <h2><i class="fas fa-baby"></i> 宝宝起名</h2>
+                <div class="naming-container">
+                    <div class="baby-image-container">
+                        <img src="baby/baby.png" alt="宝宝" class="baby-image">
+                    </div>
+                    <form id="babyNamingForm" class="naming-form">
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="familyName" style="display: block; margin-bottom: 8px; color: #3a7a6d; font-weight: 500;">宝宝姓氏</label>
+                            <input type="text" id="familyName" name="familyName" required placeholder="请输入姓氏">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label style="display: block; margin-bottom: 8px; color: #3a7a6d; font-weight: 500;">出生日期、时间</label>
+                            <div class="date-selector">
+                                <select id="calendarType" name="calendarType">
+                                    <option value="solar">公历</option>
+                                    <option value="lunar">农历</option>
+                                </select>
+                                <input type="date" id="birthDate" name="birthDate" required>
+                                <input type="time" id="birthTime" name="birthTime" placeholder="时辰（可选）">
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="babyGender" style="display: block; margin-bottom: 8px; color: #3a7a6d; font-weight: 500;">性别</label>
+                            <select id="babyGender" name="babyGender" required>
+                                <option value="">请选择性别</option>
+                                <option value="male">男孩</option>
+                                <option value="female">女孩</option>
+                                <option value="neutral">不限</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="namingStyle" style="display: block; margin-bottom: 8px; color: #3a7a6d; font-weight: 500;">起名风格</label>
+                            <select id="namingStyle" name="namingStyle">
+                                <option value="traditional">传统古典</option>
+                                <option value="modern">现代时尚</option>
+                                <option value="literary">文雅书香</option>
+                                <option value="auspicious">吉祥寓意</option>
+                                <option value="five-elements">五行补缺</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="expectation" style="display: block; margin-bottom: 8px; color: #3a7a6d; font-weight: 500;">父母期望寓意</label>
+                            <select id="expectation" name="expectation" multiple size="5">
+                                <option value="health">健康长寿</option>
+                                <option value="wisdom">聪明智慧</option>
+                                <option value="wealth">财富兴旺</option>
+                                <option value="elegance">文雅气质</option>
+                                <option value="success">事业成功</option>
+                                <option value="kindness">善良仁慈</option>
+                                <option value="courage">勇敢坚强</option>
+                                <option value="prosperity">繁荣昌盛</option>
+                                <option value="happiness">幸福快乐</option>
+                                <option value="talent">才华横溢</option>
+                                <option value="peace">平安顺遂</option>
+                                <option value="noble">高贵典雅</option>
+                            </select>
+                            <p class="help-text">按住Ctrl键可多选</p>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="avoidChars" style="display: block; margin-bottom: 8px; color: #3a7a6d; font-weight: 500;">避讳字符（可选）</label>
+                            <input type="text" id="avoidChars" name="avoidChars" placeholder="如：与长辈重名的字符">
+                            <p class="help-text">输入不希望出现在名字中的字符</p>
+                        </div>
+                        <button type="submit" class="btn">💫 AI智能起名</button>
+                        <button type="button" id="generatePdfBtn" class="btn" style="margin-left: 10px; background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);">📄 生成命名报告</button>
+                    </form>
+                    <div id="namingResults" class="naming-results">
+                        <h4>🌟 智能推荐名字</h4>
+                        <div id="nameSuggestions" class="name-suggestions"></div>
+                        <div class="analysis-section" id="nameAnalysis" style="display: none;">
+                            <h4>📋 命理分析</h4>
+                            <div class="analysis-content">
+                                <div class="five-elements-analysis">
+                                    <h5>五行分析</h5>
+                                    <div id="fiveElementsResult"></div>
+                                </div>
+                                <div class="fortune-analysis">
+                                    <h5>运势解读</h5>
+                                    <div id="fortuneResult"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history-section">
+                            <h4>起名历史记录</h4>
+                            <div id="namingHistory" class="naming-history">
+                                <p>暂无历史记录</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 宝宝起名功能模块
+        const babyNaming = {
+            // 传统文化起名数据库
+            nameDatabase: {
+                // 五行属性字库
+                fiveElements: {
+                    wood: {
+                        male: ['林', '森', '柏', '松', '梓', '栋', '楠', '彬', '杰', '桂', '桐', '榕', '樊', '权', '棋'],
+                        female: ['竹', '兰', '菊', '梅', '柳', '桃', '杏', '桂', '莲', '荷', '茉', '蓉', '芝', '芯', '苑']
+                    },
+                    fire: {
+                        male: ['炎', '焱', '烽', '煜', '炳', '昊', '晨', '旭', '阳', '曦', '晖', '炜', '烨', '焕', '灿'],
+                        female: ['晴', '暖', '晶', '曦', '炫', '烁', '焰', '丹', '彤', '朱', '红', '赤', '绯', '韵', '曜']
+                    },
+                    earth: {
+                        male: ['坤', '垚', '培', '墨', '城', '均', '坚', '境', '岩', '峰', '山', '崇', '岱', '峻', '巍'],
+                        female: ['娅', '婉', '嫣', '瑛', '瑜', '璐', '琳', '珊', '珍', '玉', '璧', '瑶', '琪', '琦', '珠']
+                    },
+                    metal: {
+                        male: ['铭', '锋', '钢', '铁', '锐', '钧', '铮', '锦', '钊', '钰', '铨', '锌', '银', '金', '鑫'],
+                        female: ['钰', '鑫', '银', '铃', '钗', '锦', '钏', '钿', '镯', '链', '铛', '镜', '锈', '铢', '钞']
+                    },
+                    water: {
+                        male: ['海', '江', '河', '湖', '波', '涛', '流', '泽', '源', '清', '淼', '渊', '润', '沐', '洋'],
+                        female: ['雨', '雪', '霜', '露', '云', '霞', '淼', '涵', '溪', '潇', '漫', '润', '洁', '清', '澜']
+                    }
+                },
+                
+                // 不同风格的名字库
+                traditional: {
+                    male: ['文', '武', '德', '仁', '义', '礼', '智', '信', '忠', '孝', '廉', '耻', '温', '良', '恭'],
+                    female: ['淑', '贤', '雅', '静', '婉', '慧', '敏', '秀', '丽', '美', '娴', '贞', '洁', '端', '庄']
+                },
+                
+                modern: {
+                    male: ['轩', '宇', '浩', '博', '涵', '俊', '泽', '睿', '航', '晨', '阳', '皓', '宸', '昊', '逸'],
+                    female: ['雨', '欣', '诗', '琪', '雅', '萱', '怡', '若', '婉', '梓', '涵', '菲', '蕊', '馨', '妍']
+                },
+                
+                literary: {
+                    male: ['诗', '书', '礼', '易', '乐', '知', '仁', '义', '信', '智', '墨', '文', '章', '韵', '雅'],
+                    female: ['诗', '词', '画', '琴', '棋', '书', '雅', '韵', '墨', '兰', '竹', '菊', '梅', '莲', '荷']
+                },
+                
+                auspicious: {
+                    male: ['福', '禄', '寿', '喜', '财', '贵', '荣', '华', '富', '康', '宁', '安', '吉', '祥', '瑞'],
+                    female: ['福', '慧', '安', '宁', '康', '乐', '怡', '悦', '欣', '喜', '吉', '祥', '瑞', '宜', '佳']
+                }
+            },
+            
+            // 生辰八字计算（简化版）
+            calculateBaZi: function(birthDate, birthTime) {
+                // 这里应该有复杂的生辰八字计算逻辑
+                // 简化版本，返回模拟的五行缺失
+                const elements = ['wood', 'fire', 'earth', 'metal', 'water'];
+                const lacking = elements[Math.floor(Math.random() * elements.length)];
+                return {
+                    lacking: lacking,
+                    strong: elements[(elements.indexOf(lacking) + 2) % 5],
+                    analysis: `根据出生时间分析，五行中${this.getElementName(lacking)}偏弱，建议在名字中补充相关属性的字。`
+                };
+            },
+            
+            // 获取五行中文名称
+            getElementName: function(element) {
+                const names = {
+                    wood: '木',
+                    fire: '火', 
+                    earth: '土',
+                    metal: '金',
+                    water: '水'
+                };
+                return names[element] || '未知';
+            },
+            
+            // 生成名字
+            generateNames: function(formData) {
+                const { familyName, gender, namingStyle, expectation, avoidChars, birthDate, birthTime } = formData;
+                const names = [];
+                
+                // 计算八字
+                const bazi = this.calculateBaZi(birthDate, birthTime);
+                
+                // 根据风格和五行选择字库
+                let characterPool = [];
+                
+                if (namingStyle === 'five-elements') {
+                    // 五行补缺起名
+                    const elementChars = this.nameDatabase.fiveElements[bazi.lacking];
+                    characterPool = gender === 'female' ? elementChars.female : elementChars.male;
+                } else {
+                    // 其他风格起名
+                    const styleChars = this.nameDatabase[namingStyle];
+                    if (styleChars) {
+                        characterPool = gender === 'female' ? styleChars.female : styleChars.male;
+                    } else {
+                        characterPool = this.nameDatabase.modern[gender === 'female' ? 'female' : 'male'];
+                    }
+                }
+                
+                // 过滤避讳字符
+                if (avoidChars) {
+                    characterPool = characterPool.filter(char => !avoidChars.includes(char));
+                }
+                
+                // 生成10个候选名字
+                for (let i = 0; i < 10; i++) {
+                    const char1 = characterPool[Math.floor(Math.random() * characterPool.length)];
+                    const char2 = Math.random() > 0.6 ? characterPool[Math.floor(Math.random() * characterPool.length)] : '';
+                    
+                    const fullName = familyName + char1 + char2;
+                    const score = this.calculateNameScore(fullName, bazi);
+                    const meaning = this.getNameMeaning(char1, char2, expectation);
+                    
+                    names.push({
+                        name: fullName,
+                        score: score,
+                        meaning: meaning,
+                        fiveElement: this.getCharElement(char1)
+                    });
+                }
+                
+                // 按评分排序
+                names.sort((a, b) => b.score - a.score);
+                
+                return {
+                    names: names,
+                    bazi: bazi
+                };
+            },
+            
+            // 计算名字评分（简化版）
+            calculateNameScore: function(name, bazi) {
+                let score = 70 + Math.floor(Math.random() * 25); // 基础分70-95
+                
+                // 根据五行匹配度调整
+                const nameElement = this.getCharElement(name.slice(1));
+                if (nameElement === bazi.lacking) {
+                    score += 5; // 补缺加分
+                }
+                
+                return Math.min(100, score);
+            },
+            
+            // 获取字的五行属性（简化版）
+            getCharElement: function(char) {
+                // 简化版，随机返回五行属性
+                const elements = ['wood', 'fire', 'earth', 'metal', 'water'];
+                return elements[Math.floor(Math.random() * elements.length)];
+            },
+            
+            // 获取名字寓意
+            getNameMeaning: function(char1, char2, expectations) {
+                const meanings = {
+                    health: '寓意身体健康，长命百岁',
+                    wisdom: '象征聪明智慧，博学多才',
+                    wealth: '预示财运亨通，富贵安康',
+                    elegance: '体现文雅气质，知书达理',
+                    success: '寓意事业有成，前程似锦',
+                    kindness: '象征善良仁慈，德行高尚',
+                    courage: '体现勇敢坚强，不畏困难',
+                    prosperity: '寓意繁荣昌盛，兴旺发达',
+                    happiness: '象征幸福快乐，心想事成',
+                    talent: '体现才华横溢，技艺精湛',
+                    peace: '寓意平安顺遂，岁月静好',
+                    noble: '象征高贵典雅，品格不凡'
+                };
+                
+                if (expectations && expectations.length > 0) {
+                    const randomExpectation = expectations[Math.floor(Math.random() * expectations.length)];
+                    return meanings[randomExpectation] || '寓意美好，前程似锦';
+                }
+                
+                return '寓意美好，前程似锦';
+            },
+            
+            // 初始化起名功能
+            init: function() {
+                const form = document.getElementById('babyNamingForm');
+                const pdfBtn = document.getElementById('generatePdfBtn');
+                
+                if (form) {
+                    form.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        this.handleSubmit();
+                    });
+                }
+                
+                if (pdfBtn) {
+                    pdfBtn.addEventListener('click', () => {
+                        this.generatePdf();
+                    });
+                }
+            },
+            
+            // 处理表单提交
+            handleSubmit: function() {
+                const formData = {
+                    familyName: document.getElementById('familyName').value.trim(),
+                    birthDate: document.getElementById('birthDate').value,
+                    birthTime: document.getElementById('birthTime').value,
+                    gender: document.getElementById('babyGender').value,
+                    namingStyle: document.getElementById('namingStyle').value,
+                    expectation: Array.from(document.getElementById('expectation').selectedOptions).map(option => option.value),
+                    avoidChars: document.getElementById('avoidChars').value.trim()
+                };
+                
+                if (!formData.familyName || !formData.birthDate || !formData.gender) {
+                    alert('请填写完整的基本信息');
+                    return;
+                }
+                
+                // 生成名字
+                const result = this.generateNames(formData);
+                this.displayResults(result, formData);
+            },
+            
+            // 显示结果
+            displayResults: function(result, formData) {
+                const suggestionsDiv = document.getElementById('nameSuggestions');
+                const analysisDiv = document.getElementById('nameAnalysis');
+                const fiveElementsDiv = document.getElementById('fiveElementsResult');
+                const fortuneDiv = document.getElementById('fortuneResult');
+                
+                // 显示名字建议
+                let html = '<div class="name-grid">';
+                result.names.forEach((item, index) => {
+                    const isRecommended = index === 0;
+                    html += `
+                        <div class="name-card ${isRecommended ? 'recommended' : ''}">
+                            <div class="name-text">${item.name}</div>
+                            <div class="name-score">评分: ${item.score}</div>
+                            <div class="name-element">五行: ${this.getElementName(item.fiveElement)}</div>
+                            <div class="name-meaning">${item.meaning}</div>
+                            ${isRecommended ? '<div class="recommended-badge">🌟 AI推荐</div>' : ''}
+                        </div>
+                    `;
+                });
+                html += '</div>';
+                suggestionsDiv.innerHTML = html;
+                
+                // 显示五行分析
+                fiveElementsDiv.innerHTML = `
+                    <div class="five-elements-info">
+                        <p><strong>五行分析：</strong>${result.bazi.analysis}</p>
+                        <p><strong>偏弱五行：</strong>${this.getElementName(result.bazi.lacking)}</p>
+                        <p><strong>偏强五行：</strong>${this.getElementName(result.bazi.strong)}</p>
+                    </div>
+                `;
+                
+                // 显示运势解读
+                fortuneDiv.innerHTML = `
+                    <div class="fortune-info">
+                        <p><strong>整体运势：</strong>根据生辰分析，此命格具有良好的发展潜力。</p>
+                        <p><strong>性格特点：</strong>聪明伶俐，善于思考，具有创新精神。</p>
+                        <p><strong>未来发展：</strong>在学业和事业上都有不错的表现，建议培养多方面才能。</p>
+                    </div>
+                `;
+                
+                // 显示分析区域
+                analysisDiv.style.display = 'block';
+                
+                // 保存到历史记录
+                this.saveToHistory(formData, result.names[0]);
+            },
+            
+            // 保存到历史记录
+            saveToHistory: function(formData, bestName) {
+                const history = JSON.parse(localStorage.getItem('namingHistory') || '[]');
+                const record = {
+                    date: new Date().toLocaleDateString(),
+                    surname: formData.familyName,
+                    gender: formData.gender,
+                    bestName: bestName.name,
+                    score: bestName.score
+                };
+                
+                history.unshift(record);
+                if (history.length > 10) history.pop(); // 只保留最近10条
+                
+                localStorage.setItem('namingHistory', JSON.stringify(history));
+                this.displayHistory();
+            },
+            
+            // 显示历史记录
+            displayHistory: function() {
+                const historyDiv = document.getElementById('namingHistory');
+                const history = JSON.parse(localStorage.getItem('namingHistory') || '[]');
+                
+                if (history.length === 0) {
+                    historyDiv.innerHTML = '<p>暂无历史记录</p>';
+                    return;
+                }
+                
+                let html = '<div class="history-list">';
+                history.forEach(record => {
+                    html += `
+                        <div class="history-item">
+                            <div class="history-date">${record.date}</div>
+                            <div class="history-info">
+                                <span class="history-name">${record.bestName}</span>
+                                <span class="history-score">评分: ${record.score}</span>
+                            </div>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+                historyDiv.innerHTML = html;
+            },
+            
+            // 生成PDF报告
+            generatePdf: function() {
+                const formData = {
+                    familyName: document.getElementById('familyName').value.trim(),
+                    birthDate: document.getElementById('birthDate').value,
+                    gender: document.getElementById('babyGender').value
+                };
+                
+                if (!formData.familyName || !formData.birthDate || !formData.gender) {
+                    alert('请先填写基本信息并生成名字');
+                    return;
+                }
+                
+                // 模拟调用API生成PDF
+                const loadingMsg = document.createElement('div');
+                loadingMsg.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.8); color: white; padding: 20px; border-radius: 10px; z-index: 9999;';
+                loadingMsg.textContent = '正在生成命名报告PDF，请稍候...';
+                document.body.appendChild(loadingMsg);
+                
+                setTimeout(() => {
+                    document.body.removeChild(loadingMsg);
+                    alert('PDF报告生成功能开发中，敬请期待！');
+                }, 2000);
+            }
+        };
+        
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // ... existing code ...
+            
+            // 初始化宝宝起名功能
+            babyNaming.init();
+            babyNaming.displayHistory();
+        });
+        
+        // 添加样式
+        const style = document.createElement('style');
+        style.textContent = `
+            .name-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 15px;
+                margin: 20px 0;
+            }
+            
+            .name-card {
+                background: rgba(255, 255, 255, 0.95);
+                border: 1px solid #b8d5c7;
+                border-radius: 10px;
+                padding: 15px;
+                text-align: center;
+                transition: all 0.3s ease;
+                position: relative;
+            }
+            
+            .name-card:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            }
+            
+            .name-card.recommended {
+                border: 2px solid #4a8e7f;
+                background: linear-gradient(135deg, rgba(74, 142, 127, 0.1), rgba(99, 169, 149, 0.1));
+            }
+            
+            .name-text {
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: #3a7a6d;
+                margin-bottom: 8px;
+            }
+            
+            .name-score {
+                color: #ff6b6b;
+                font-weight: 500;
+                margin-bottom: 5px;
+            }
+            
+            .name-element {
+                color: #5a8a7e;
+                font-size: 0.9rem;
+                margin-bottom: 8px;
+            }
+            
+            .name-meaning {
+                color: #2c514c;
+                font-size: 0.85rem;
+                line-height: 1.4;
+            }
+            
+            .recommended-badge {
+                position: absolute;
+                top: -8px;
+                right: -8px;
+                background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+                color: white;
+                padding: 4px 8px;
+                border-radius: 15px;
+                font-size: 0.7rem;
+                font-weight: bold;
+            }
+            
+            .analysis-section {
+                background: rgba(163, 201, 184, 0.1);
+                border: 1px solid #a3c9b8;
+                border-radius: 10px;
+                padding: 20px;
+                margin: 20px 0;
+            }
+            
+            .analysis-content {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+            }
+            
+            .five-elements-analysis, .fortune-analysis {
+                background: rgba(255, 255, 255, 0.8);
+                padding: 15px;
+                border-radius: 8px;
+            }
+            
+            .five-elements-analysis h5, .fortune-analysis h5 {
+                color: #3a7a6d;
+                margin-bottom: 10px;
+                font-size: 1.1rem;
+            }
+            
+            .history-list {
+                max-height: 200px;
+                overflow-y: auto;
+            }
+            
+            .history-item {
+                background: rgba(255, 255, 255, 0.9);
+                border: 1px solid #d1e8e2;
+                border-radius: 8px;
+                padding: 10px;
+                margin-bottom: 8px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .history-date {
+                color: #7a9c91;
+                font-size: 0.85rem;
+            }
+            
+            .history-name {
+                font-weight: bold;
+                color: #3a7a6d;
+                margin-right: 10px;
+            }
+            
+            .history-score {
+                color: #ff6b6b;
+                font-size: 0.85rem;
+            }
+        `;
+        document.head.appendChild(style);
+            // 为导航卡片添加悬停效果
+            const navCards = document.querySelectorAll('.nav-card');
+            navCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    if (!this.href || this.href.includes('#')) {
+                        this.style.transform = 'translateY(-10px)';
+                        this.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.15)';
+                    }
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    if (!this.href || this.href.includes('#')) {
+                        this.style.transform = 'translateY(0)';
+                        this.style.boxShadow = '0 6px 20px rgba(0, 0, 0, 0.08)';
+                    }
+                });
+            });
+            
+            // 设置首页为当前活动状态
+            setActiveNavItem('首页');
+            
+            // 初始化上上签功能
+            initLotterySystem();
+        });
+        
+        // 上上签数据库
+        let signsData = [];
+        
+        // 初始化抽签系统
+        async function initLotterySystem() {
+            try {
+                const response = await fetch('lucky/signs_100.json');
+                signsData = await response.json();
+                console.log('签文数据加载成功，共', signsData.length, '支签');
+            } catch (error) {
+                console.error('加载签文数据失败:', error);
+                // 使用默认数据
+                signsData = getDefaultSigns();
+            }
+            
+            // 绑定抽签事件
+            const drawButton = document.getElementById('drawLottery');
+            if (drawButton) {
+                drawButton.addEventListener('click', drawLottery);
+            }
+        }
+        
+        // 抽签功能
+        function drawLottery() {
+            if (signsData.length === 0) {
+                alert('签文数据暂未加载，请稍后再试');
+                return;
+            }
+            
+            // 禁用抽签按钮
+            const drawButton = document.getElementById('drawLottery');
+            drawButton.disabled = true;
+            drawButton.textContent = '抽签中...';
+            
+            // 模拟抽签动画
+            setTimeout(() => {
+                // 随机选择一支签
+                const randomIndex = Math.floor(Math.random() * signsData.length);
+                const selectedSign = signsData[randomIndex];
+                
+                // 显示结果
+                displaySignResult(selectedSign);
+                
+                // 恢复按钮
+                drawButton.disabled = false;
+                drawButton.textContent = '再次抽签';
+            }, 2000);
+        }
+        
+        // 显示签文结果
+        function displaySignResult(sign) {
+            const resultDiv = document.getElementById('lotteryResult');
+            const titleEl = document.getElementById('signTitle');
+            const luckEl = document.getElementById('signLuck');
+            const poemEl = document.getElementById('signPoem');
+            const explainEl = document.getElementById('signExplain');
+            const scopeEl = document.querySelector('.scope-grid');
+            
+            // 设置内容
+            titleEl.textContent = sign.title;
+            poemEl.textContent = sign.poem;
+            explainEl.textContent = sign.explain;
+            
+            // 设置签运样式
+            luckEl.textContent = sign.luck;
+            luckEl.className = '';
+            if (sign.luck.includes('上上签') || sign.luck.includes('上吉签')) {
+                luckEl.style.background = 'linear-gradient(135deg, #ff6b6b, #ee5a52)';
+                luckEl.style.color = 'white';
+            } else if (sign.luck.includes('中吉签') || sign.luck.includes('中上签')) {
+                luckEl.style.background = 'linear-gradient(135deg, #feca57, #ff9ff3)';
+                luckEl.style.color = 'white';
+            } else {
+                luckEl.style.background = 'linear-gradient(135deg, #a3c9b8, #b8d5c7)';
+                luckEl.style.color = '#2c514c';
+            }
+            
+            // 显示各方面指引
+            scopeEl.innerHTML = '';
+            if (sign.scope) {
+                Object.entries(sign.scope).forEach(([key, value]) => {
+                    const scopeItem = document.createElement('div');
+                    scopeItem.style.cssText = 'background: rgba(255, 255, 255, 0.9); padding: 15px; border-radius: 10px; border: 1px solid #b8d5c7;';
+                    scopeItem.innerHTML = `
+                        <h5 style="color: #3a7a6d; margin-bottom: 8px; font-size: 1.1rem;">${key}</h5>
+                        <p style="color: #5a8a7e; line-height: 1.5; margin: 0;">${value}</p>
+                    `;
+                    scopeEl.appendChild(scopeItem);
+                });
+            }
+            
+            // 显示结果区域
+            resultDiv.style.display = 'block';
+            resultDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // 重置抽签
+        function resetLottery() {
+            const resultDiv = document.getElementById('lotteryResult');
+            const drawButton = document.getElementById('drawLottery');
+            
+            resultDiv.style.display = 'none';
+            drawButton.textContent = '抽 签';
+            drawButton.disabled = false;
+        }
+        
+        // 默认签文数据（备用）
+        function getDefaultSigns() {
+            return [
+                {
+                    "id": 1,
+                    "title": "第1签",
+                    "poem": "大展宏图可贺喜，功名遂意事无疑；只因今日财源旺，福禄寿喜总相随。",
+                    "explain": "此签大吉大利，主功名财运双全，凡事顺遂。谋事有成，贵人扶持。",
+                    "luck": "上上签",
+                    "scope": {
+                        "事业": "事业发展顺利，宜把握机会。",
+                        "财运": "财源广进，投资获利。",
+                        "感情": "感情和合，婚姻美满。",
+                        "健康": "身心康泰，宜保持。",
+                        "出行": "出行平安，利于见贵。"
+                    }
+                }
+            ];
+        }
+        
+        // 返回首页功能
+        function goHome() {
+            // 显示导航卡片
+            document.querySelector('.main-navigation').style.display = 'block';
+            // 隐藏模块容器
+            document.querySelector('.modules-container').style.display = 'none';
+            // 移除返回按钮
+            const backButton = document.querySelector('.back-button');
+            if (backButton) {
+                backButton.remove();
+            }
+            // 设置导航高亮
+            setActiveNavItem('首页');
+        }
+        
+        // 设置活动导航项
+        function setActiveNavItem(itemName) {
+            const navLinks = document.querySelectorAll('.top-navigation a');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.textContent.includes(itemName)) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        // 显示特定模块的函数
+        function showModule(moduleId) {
+            // 隐藏导航
+            document.querySelector('.main-navigation').style.display = 'none';
+            
+            // 显示模块容器
+            const modulesContainer = document.querySelector('.modules-container');
+            modulesContainer.style.display = 'block';
+            
+            // 隐藏所有模块
+            const allModules = modulesContainer.querySelectorAll('.section-container');
+            allModules.forEach(module => module.style.display = 'none');
+            
+            // 显示选中的模块
+            const targetModule = document.getElementById(moduleId + '-module');
+            if (targetModule) {
+                targetModule.style.display = 'block';
+            }
+            
+            // 设置导航高亮
+            if (moduleId === 'shangshangqian') {
+                setActiveNavItem('上上签');
+            } else if (moduleId === 'baby-naming') {
+                setActiveNavItem('宝宝起名');
+            }
+            
+            // 添加返回按钮
+            if (!document.querySelector('.back-button')) {
+                const backButton = document.createElement('button');
+                backButton.className = 'btn back-button';
+                backButton.innerHTML = '← 返回主页';
+                backButton.style.marginBottom = '20px';
+                backButton.onclick = function() {
+                    goHome();
+                };
+                modulesContainer.insertBefore(backButton, modulesContainer.firstChild);
+            }
+        }
+    </script>
+  </body>
+</html>

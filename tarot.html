@@ -1,0 +1,1720 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>塔罗与心灵疗愈 - 连接东西方智慧的灵性之旅</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;700&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Serif SC', serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f0f7e6 0%, #e0f0e9 50%, #d1e8e2 100%);
+            color: #2c514c;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body:before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M20,20 C40,10 60,10 80,20 C90,40 90,60 80,80 C60,90 40,90 20,80 C10,60 10,40 20,20 Z" fill="none" stroke="%23a3c9b8" stroke-width="0.5" opacity="0.3"/></svg>');
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid #a3c9b8;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to right, #4a8e7f, #63a995);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            color: #3a7a6d;
+            margin-bottom: 15px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            font-family: 'Ma Shan Zheng', cursive;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: #5a8a7e;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+        
+        .tagline {
+            font-style: italic;
+            color: #7a9c91;
+            margin-top: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .user-actions {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .main-content {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .card-section, .chat-section, .resources-section {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid #a3c9b8;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-section:before, .chat-section:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 C70 0 90 20 90 50 C90 80 70 100 50 100 C20 100 0 80 0 50 C0 20 20 0 50 0 Z" fill="%23d1e8e2" opacity="0.5"/></svg>') no-repeat;
+            background-size: contain;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        h2 {
+            color: #3a7a6d;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #b8d5c7;
+            font-weight: 400;
+            position: relative;
+        }
+        
+        h2:after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(to right, #4a8e7f, #63a995);
+        }
+        
+        .card-display {
+            text-align: center;
+            margin: 25px 0;
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .tarot-card {
+            width: 200px;
+            height: 320px;
+            background: linear-gradient(135deg, #d6e9e1 0%, #c5ded3 100%);
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 25px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            border: 2px solid #9bc1b3;
+            transform-style: preserve-3d;
+        }
+        
+        .tarot-card:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect x="0" y="0" width="100" height="100" fill="none" stroke="%239bc1b3" stroke-width="2" stroke-dasharray="10,10"/></svg>');
+            opacity: 0.2;
+        }
+        
+        .tarot-card:hover {
+            transform: translateY(-8px) rotateY(5deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card-icon {
+            font-size: 4.5rem;
+            color: #4a8e7f;
+            transition: all 0.5s ease;
+        }
+        
+        .tarot-card:hover .card-icon {
+            transform: scale(1.1);
+        }
+        
+        /* 顶部导航栏样式 */
+        .top-navigation a:hover {
+            background: rgba(74, 142, 127, 0.1) !important;
+            color: #2c514c !important;
+            transform: translateY(-1px);
+        }
+        
+        .top-navigation a.active {
+            background: linear-gradient(135deg, #4a8e7f 0%, #63a995 100%) !important;
+            color: white !important;
+        }
+        
+        @media (max-width: 768px) {
+            .top-navigation ul {
+                gap: 20px !important;
+            }
+            .top-navigation a {
+                font-size: 1rem !important;
+                padding: 6px 12px !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .top-navigation ul {
+                gap: 10px !important;
+                flex-direction: column;
+            }
+            .top-navigation a {
+                font-size: 0.9rem !important;
+                padding: 8px 12px !important;
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        
+        .card-name {
+            font-size: 1.8rem;
+            color: #3a7a6d;
+            margin: 15px 0;
+            font-weight: 500;
+        }
+        
+        .card-description {
+            color: #5a8a7e;
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        .btn {
+            background: linear-gradient(to right, #4a8e7f, #63a995);
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(74, 142, 127, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(to right, #3a7a6d, #4a8e7f);
+            transition: all 0.5s ease;
+            z-index: -1;
+        }
+        
+        .btn:hover:before {
+            width: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(74, 142, 127, 0.4);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(to right, #a3c9b8, #b8d5c7);
+            color: #2c514c;
+        }
+        
+        .btn-secondary:before {
+            background: linear-gradient(to right, #93b9a8, #a3c9b8);
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .premium-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #e6c973, #d4af37);
+            color: #5a4a00;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-left: 10px;
+            font-weight: bold;
+            box-shadow: 0 3px 8px rgba(180, 160, 60, 0.3);
+        }
+        
+        .spread-options {
+            display: flex;
+            gap: 15px;
+            margin: 15px 0;
+            justify-content: center;
+        }
+        
+        .spread-option {
+            padding: 10px 20px;
+            background: rgba(163, 201, 184, 0.3);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .spread-option.active {
+            background: linear-gradient(to right, #4a8e7f, #63a995);
+            color: white;
+        }
+        
+        .tarot-cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+        
+        .mini-card {
+            width: 70px;
+            height: 100px;
+            background: linear-gradient(135deg, #d6e9e1 0%, #c5ded3 100%);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #9bc1b3;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .mini-card:hover {
+            transform: translateY(-5px) rotate(5deg);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            background: rgba(240, 247, 230, 0.6);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-height: 400px;
+            border: 1px solid #d1e8e2;
+        }
+        
+        .message {
+            max-width: 80%;
+            padding: 15px 20px;
+            border-radius: 20px;
+            line-height: 1.5;
+            position: relative;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .user-message {
+            align-self: flex-end;
+            background: linear-gradient(to right, #4a8e7f, #63a995);
+            color: white;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .ai-message {
+            align-self: flex-start;
+            background: rgba(255, 255, 255, 0.95);
+            color: #2c514c;
+            border-bottom-left-radius: 5px;
+            border: 1px solid #d1e8e2;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .chat-input {
+            display: flex;
+            gap: 15px;
+        }
+        
+        input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 1px solid #b8d5c7;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            outline: none;
+            background: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s ease;
+        }
+        
+        input:focus {
+            border-color: #4a8e7f;
+            box-shadow: 0 0 0 3px rgba(74, 142, 127, 0.2);
+        }
+        
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .resource-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border: 1px solid #a3c9b8;
+            transition: all 0.3s ease;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        .resource-card h3 {
+            color: #3a7a6d;
+            margin-bottom: 10px;
+        }
+        
+        .resource-card p {
+            color: #5a8a7e;
+            margin-bottom: 15px;
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #b8d5c7, transparent);
+            margin: 25px 0;
+        }
+        
+        .quote {
+            font-style: italic;
+            text-align: center;
+            color: #5a8a7e;
+            margin: 25px 0;
+            padding: 0 20px;
+            font-size: 1.1rem;
+            position: relative;
+        }
+        
+        .quote:before, .quote:after {
+            content: '"';
+            font-size: 3rem;
+            color: #a3c9b8;
+            position: absolute;
+            opacity: 0.5;
+        }
+        
+        .quote:before {
+            top: -20px;
+            left: 0;
+        }
+        
+        .quote:after {
+            bottom: -40px;
+            right: 0;
+            transform: rotate(180deg);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 15px;
+            position: relative;
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .modal-content form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .modal-content input {
+            padding: 12px 15px;
+            border: 1px solid #b8d5c7;
+            border-radius: 25px;
+            font-size: 1rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #5a8a7e;
+            font-size: 1rem;
+            margin-top: 30px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            border: 1px solid #a3c9b8;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .tarot-card {
+                width: 180px;
+                height: 280px;
+            }
+            
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .user-actions {
+                position: static;
+                justify-content: center;
+                margin-top: 20px;
+            }
+        }
+        
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .floating-element {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 20s infinite linear;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(360deg); }
+        }
+        
+        .floating-element:nth-child(1) {
+            top: 10%;
+            left: 5%;
+            font-size: 2rem;
+            animation-duration: 25s;
+        }
+        
+        .floating-element:nth-child(2) {
+            top: 20%;
+            right: 10%;
+            font-size: 1.5rem;
+            animation-duration: 20s;
+            animation-delay: -5s;
+        }
+        
+        .floating-element:nth-child(3) {
+            bottom: 30%;
+            left: 15%;
+            font-size: 2.2rem;
+            animation-duration: 30s;
+            animation-delay: -10s;
+        }
+        
+        .floating-element:nth-child(4) {
+            bottom: 20%;
+            right: 5%;
+            font-size: 1.8rem;
+            animation-duration: 22s;
+            animation-delay: -15s;
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="floating-element">☯</div>
+        <div class="floating-element">🌸</div>
+        <div class="floating-element">🍃</div>
+        <div class="floating-element">🌙</div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1>塔罗与心灵疗愈 <i class="fas fa-leaf"></i></h1>
+            <p class="subtitle">连接东西方智慧的灵性之旅 · 与潜意识对话</p>
+            <p class="tagline">"塔罗不是预测未来的水晶球，而是映照内心世界的心灵镜子"</p>
+            
+            <div class="user-actions">
+                <button id="loginBtn" class="btn btn-secondary">登录</button>
+                <button id="registerBtn" class="btn">注册</button>
+            </div>
+        </header>
+        
+        <!-- 顶部导航栏 -->
+        <nav class="top-navigation" style="background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 15px 30px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); border: 1px solid #a3c9b8;">
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap;">
+                <li><a href="index.html" style="text-decoration: none; color: #3a7a6d; font-size: 1.1rem; font-weight: 500; padding: 8px 16px; border-radius: 10px; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-home" style="margin-right: 6px;"></i>首页</a></li>
+                <li><a href="index.html#shangshangqian" style="text-decoration: none; color: #3a7a6d; font-size: 1.1rem; font-weight: 500; padding: 8px 16px; border-radius: 10px; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-ticket-alt" style="margin-right: 6px;"></i>上上签</a></li>
+                <li><a href="../company_name.html" style="text-decoration: none; color: #3a7a6d; font-size: 1.1rem; font-weight: 500; padding: 8px 16px; border-radius: 10px; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-building" style="margin-right: 6px;"></i>公司测名</a></li>
+                <li><a href="index.html#baby-naming" style="text-decoration: none; color: #3a7a6d; font-size: 1.1rem; font-weight: 500; padding: 8px 16px; border-radius: 10px; transition: all 0.3s ease; display: flex; align-items: center;"><i class="fas fa-baby" style="margin-right: 6px;"></i>宝宝起名</a></li>
+                <li><a href="#" class="active" style="text-decoration: none; color: white; font-size: 1.1rem; font-weight: 500; padding: 8px 16px; border-radius: 10px; transition: all 0.3s ease; display: flex; align-items: center; background: linear-gradient(135deg, #4a8e7f 0%, #63a995 100%);"><i class="fas fa-moon" style="margin-right: 6px;"></i>塔罗牌</a></li>
+            </ul>
+        </nav>
+        
+        <div class="main-content">
+            <section class="card-section">
+                <h2>塔罗牌抽取 <i class="fas fa-cards"></i></h2>
+                <p>抽一张塔罗牌，获取即时的灵性指引和初步分析。解锁深度报告可获得完整解读和个性化建议。</p>
+                
+                <div class="card-display">
+                    <div class="tarot-card">
+                        <div class="card-icon">
+                            <i class="fas fa-question"></i>
+                        </div>
+                    </div>
+                    <p class="card-name">等待抽取</p>
+                    <p class="card-description">点击下方按钮抽取一张塔罗牌，获取今日指引。</p>
+                </div>
+                
+                <div class="button-group">
+                    <button class="btn" id="drawCard">
+                        <i class="fas fa-random"></i> 抽取塔罗牌
+                    </button>
+                    <button class="btn btn-secondary" id="buyReport">
+                        <i class="fas fa-unlock"></i> 解锁深度报告 <span class="premium-badge">高级</span>
+                    </button>
+                    <button class="btn btn-secondary" id="shareReading">
+                        <i class="fas fa-share-alt"></i> 分享解读
+                    </button>
+                </div>
+                
+                <div class="divider"></div>
+                
+                <h3>牌阵选择</h3>
+                <div class="spread-options">
+                    <div class="spread-option active" data-spread="single">单张牌</div>
+                    <div class="spread-option" data-spread="three">三牌阵</div>
+                    <div class="spread-option" data-spread="celtic">凯尔特十字</div>
+                </div>
+                
+                <div class="tarot-cards">
+                    <div class="mini-card">过去</div>
+                    <div class="mini-card">现在</div>
+                    <div class="mini-card">未来</div>
+                </div>
+                <p>尝试使用时间之流牌阵，了解问题的过去、现在和未来发展趋势。</p>
+            </section>
+            
+            <section class="chat-section">
+                <h2>塔罗疗愈师咨询 <i class="fas fa-comments"></i></h2>
+                <p>向我们的AI塔罗疗愈师提问，获取融合东方智慧的个性化指导。</p>
+                
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message ai-message">
+                        🌸 你好，亲爱的朋友，我是慧心。在这个充满变化的世界里，我在这里陪伴你探索心灵的深度。我融合了塔罗的古老智慧和东方哲学的温柔教导，愿意和你一起在生命的旅程中寻找光明和平静。
+                        <br><br>
+                        在这里，没有判断，只有理解；没有指责，只有陪伴。请放心地分享你的心声，无论是焦虑、困惑，还是快乐和梦想——每一种情感都值得被温柔以待。 🌿
+                    </div>
+                </div>
+                
+                <!-- 快速回复按钮将在这里动态添加 -->
+                
+                <div class="chat-input">
+                    <input type="text" id="userInput" placeholder="输入您的问题...">
+                    <button class="btn" id="sendMessage">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                
+                <!-- 对话管理功能 -->
+                <div class="chat-management" style="margin-top: 15px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                    <button class="btn btn-secondary" id="viewHistoryBtn" style="background: rgba(163, 201, 184, 0.6); font-size: 0.9rem; padding: 8px 16px;">
+                        <i class="fas fa-history"></i> 查看历史
+                    </button>
+                    <button class="btn btn-secondary" id="clearHistoryBtn" style="background: rgba(200, 100, 100, 0.6); font-size: 0.9rem; padding: 8px 16px;">
+                        <i class="fas fa-trash"></i> 清空记录
+                    </button>
+                    <button class="btn btn-secondary" id="exportChatBtn" style="background: rgba(74, 142, 127, 0.6); font-size: 0.9rem; padding: 8px 16px;">
+                        <i class="fas fa-download"></i> 导出对话
+                    </button>
+                </div>
+                
+                <div class="divider"></div>
+                
+                <div class="quote">
+                    "真正的塔罗大师，都是将书本知识与内在智慧完美结合的人。"
+                </div>
+            </section>
+        </div>
+        
+        <section class="resources-section">
+            <h2>塔罗学习资源 <i class="fas fa-book"></i></h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <h3>塔罗基础</h3>
+                    <p>了解塔罗牌的基本结构和含义，开始你的塔罗之旅。</p>
+                    <button class="btn" id="tarotBasicsBtn">阅读更多</button>
+                </div>
+                <div class="resource-card">
+                    <h3>牌阵指南</h3>
+                    <p>学习各种牌阵的使用方法和适用场景。</p>
+                    <button class="btn" onclick="window.location.href='tarot_play.html'">阅读更多</button>
+                </div>
+                <div class="resource-card">
+                    <h3>东方智慧与塔罗</h3>
+                    <p>探索塔罗与易经、道家思想等东方智慧的共通之处。</p>
+                    <button class="btn">阅读更多</button>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>© 2025 塔罗与心灵疗愈 · 本网站内容仅供娱乐和自我探索使用</p>
+            <p>融合东方智慧与现代心理学视角的塔罗解读</p>
+        </footer>
+    </div>
+
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">登录</h2>
+            <form id="authForm">
+                <input type="email" id="email" placeholder="邮箱" required>
+                <input type="password" id="password" placeholder="密码" required>
+                <button type="submit" class="btn">提交</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 塔罗基础阅读更多按钮事件
+            document.getElementById('tarotBasicsBtn')?.addEventListener('click', function() {
+                    window.location.href = 'tarot_cards.html';
+                });
+            // 塔罗牌数据
+            const tarotCards = [
+                { 
+                    name: "愚者", 
+                    icon: "fas fa-hat-cowboy",
+                    description: "新的开始，无限可能。保持开放的心态，信任生命的旅程。",
+                    fullDescription: "愚者牌代表新的开始、冒险和精神自由。它鼓励你以天真和开放的心态迎接新的体验，不要被过去的经验限制。在东方智慧中，这与道家的'无为'思想相通，提醒我们顺应自然，不刻意强求。"
+                },
+                { 
+                    name: "魔术师", 
+                    icon: "fas fa-hat-wizard",
+                    description: "运用你的资源和技能，将想法转化为现实。你有创造奇迹的能力。",
+                    fullDescription: "魔术师牌象征着创造力、技能和将想法变为现实的能力。你拥有所需的一切资源，只需要正确运用它们。这与儒家'知行合一'的理念相呼应，强调将知识转化为行动的重要性。"
+                },
+                { 
+                    name: "女祭司", 
+                    icon: "fas fa-moon",
+                    description: "倾听你内心的声音和直觉。答案不在外面，而在你的内心深处。",
+                    fullDescription: "女祭司代表直觉、潜意识智慧和内在知识。她鼓励你倾听内心的声音，而不是依赖外部意见。这与佛家'静坐内观'的修行方式相通，提醒我们在静默中寻找智慧。"
+                },
+                { 
+                    name: "皇后", 
+                    icon: "fas fa-crown",
+                    description: "丰盛、滋养和创造力的时期。与自然连接，享受生命的馈赠。",
+                    fullDescription: "皇后牌象征着丰盛、滋养和创造力。她代表与大自然的连接和生命的丰饶。在东方智慧中，这与道家'道法自然'和《易经》'厚德载物'的思想相呼应，提醒我们接纳并创造生活中的美好。"
+                },
+                { 
+                    name: "皇帝", 
+                    icon: "fas fa-crown",
+                    description: "建立结构和秩序的时候。运用逻辑和权威来达成目标。",
+                    fullDescription: "皇帝牌代表结构、秩序和权威。他鼓励你建立清晰的界限并为自己的生活负责。这与儒家'仁德治国'和'君子之道'的理想相符，强调通过理性和决断力来建立稳定和安全。"
+                }
+            ];
+            
+            // 智能AI疗愈师系统（增强版）
+            const aiTherapist = {
+                // 对话历史
+                conversationHistory: [],
+                
+                // 用户情绪状态追踪
+                userMoodState: 'neutral',
+                
+                // 疗愈师人格特质
+                personality: {
+                    name: '慧心',
+                    style: 'gentle_wise', // 温柔智慧型
+                    greeting: ['亲爱的朋友', '温柔的灵魂', '心爱的孩子', '我的朋友', '善良的你'],
+                    empathy: ['我理解你的感受', '我能感受到你内心的', '你的心情我完全理解', '这种感觉我很理解']
+                },
+                
+                // 用户偏好学习
+                userPreferences: {
+                    favoriteTopics: [],
+                    communicationStyle: 'gentle', // 默认温柔风格
+                    wisdomSource: 'mixed'
+                },
+                
+                // 从本地存储加载用户数据
+                loadUserData: function() {
+                    const savedData = localStorage.getItem('tarotTherapistData');
+                    if (savedData) {
+                        const data = JSON.parse(savedData);
+                        this.conversationHistory = data.conversationHistory || [];
+                        this.userPreferences = {...this.userPreferences, ...data.userPreferences};
+                    }
+                },
+                
+                // 保存用户数据到本地存储
+                saveUserData: function() {
+                    const dataToSave = {
+                        conversationHistory: this.conversationHistory.slice(-50), // 只保存最近50条对话
+                        userPreferences: this.userPreferences
+                    };
+                    localStorage.setItem('tarotTherapistData', JSON.stringify(dataToSave));
+                },
+                
+                // 学习用户偏好
+                learnFromInteraction: function(userMessage, aiResponse) {
+                    // 分析用户关注的主题
+                    const topics = this.extractTopics(userMessage);
+                    topics.forEach(topic => {
+                        if (!this.userPreferences.favoriteTopics.includes(topic)) {
+                            this.userPreferences.favoriteTopics.push(topic);
+                        }
+                    });
+                    
+                    // 分析沟通风格偏好
+                    if (/直接|简单|快速/.test(userMessage)) {
+                        this.userPreferences.communicationStyle = 'direct';
+                    } else if (/温柔|耐心|慰藉/.test(userMessage)) {
+                        this.userPreferences.communicationStyle = 'gentle';
+                    }
+                    
+                    // 分析智慧源偏好
+                    if (/东方|中国|传统|易经|佛|道/.test(userMessage)) {
+                        this.userPreferences.wisdomSource = 'eastern';
+                    }
+                    
+                    this.saveUserData();
+                },
+                
+                // 提取主题关键词
+                extractTopics: function(message) {
+                    const topics = [];
+                    if (/工作|事业|职业/.test(message)) topics.push('career');
+                    if (/爱情|感情|恋爱/.test(message)) topics.push('love');
+                    if (/金钱|财富|财运/.test(message)) topics.push('finance');
+                    if (/健康|身体/.test(message)) topics.push('health');
+                    if (/家庭|亲情/.test(message)) topics.push('family');
+                    return topics;
+                },
+                
+                // 关键词映射和智能回复
+                keywordResponses: {
+                    // 情感类关键词
+                    emotions: {
+                        '焦虑|担心|紧张|恐惧|害怕|不安|心慌|恐慌': {
+                            cards: ['隐士', '星星', '太阳', '节制', '女祭司'],
+                            responses: [
+                                "亲爱的，我能感受到你内心的不安，就像夜空中迷路的小鸟。让我们一起寻找那颗指引的星星吧。隐士牌告诉我们，有时候答案就在安静的内省中。不妨每天给自己留10分钟的静心时光，感受内在的宁静。",
+                                "温柔的灵魂，焦虑往往是因为我们太关心未来的不确定性。星星牌象征着希望和指引，提醒我们即使在最黑暗的夜晚，也有光芒为我们照亮前路。深呼吸，将注意力回到当下这一刻，感受自己的心跳，你比想象中更坚强。",
+                                "我的朋友，太阳牌带来温暖的拥抱，告诉我们每一个黎明都带着新的希望。当恐惧袭来时，试着想象自己被温暖的阳光包围，那份光明就在你的内心深处，从未离开过。"
+                            ]
+                        },
+                        '开心|快乐|高兴|兴奋|喜悦|满意|欣喜|愉快': {
+                            cards: ['太阳', '世界', '圣杯三', '星币十'],
+                            responses: [
+                                "多么美好的能量！你的喜悦如同太阳牌一样温暖明亮，照亮了周围的每一个角落。这种正面的能量是珍贵的礼物，请好好珍惜这个美好的时刻，让它成为你生命中温暖的记忆。",
+                                "看到你的快乐，我的心也跟着温暖起来。世界牌代表着完整和满足，你现在的状态正是这样的圆满。这种喜悦不仅滋养着你，也会像涟漪一样传递给身边的人。",
+                                "你的快乐如同圣杯三一样，充满了庆祝和分享的能量。喜悦是心灵最好的良药，建议你将这份美好与所爱的人分享，让爱在分享中倍增。"
+                            ]
+                        },
+                        '迷茫|困惑|不知道|不确定': {
+                            cards: ['愚者', '月亮', '命运之轮'],
+                            responses: [
+                                "迷茫是成长路上的必经之路。愚者牌提醒我们，有时候不知道方向反而是新开始的信号。相信自己的直觉，勇敢迈出第一步。",
+                                "月亮牌反映了您内心的不确定感。这张牌告诉我们，迷雾终会散去，真相会在合适的时候显现。",
+                                "困惑时期往往预示着转变的到来。命运之轮提醒我们，生命是一个循环，每个阶段都有其意义。"
+                            ]
+                        }
+                    },
+                    
+                    // 生活领域关键词
+                    lifeAreas: {
+                        '工作|事业|职业|上班|同事|老板|升职|加薪|跳槽': {
+                            cards: ['皇帝', '战车', '钱币十', '权杖三', '钱币八'],
+                            responses: [
+                                "亲爱的，关于事业的发展，皇帝牌带来的智慧是：真正的领导力来自于内在的稳定和自信。建议你先理清自己的价值观和目标，然后用理性和智慧来制定实现计划。记住，每一步实地的努力都在为你的梦想铺路。",
+                                "温柔的灵魂，战车牌象征着在职场上的前进动力。但真正的成功不在于盲目地奔跑，而在于找到平衡点。建议你保持专注和决心，同时也要照顾好自己的身心健康。工作只是生活的一部分，不是全部。",
+                                "我的朋友，钱币十代表着事业的稳定和丰收。这提醒我们，真正的成就需要时间的积累。不要急于求成，每一天的小进步都在为未来的大成就做准备。耗心一点，让时间成为你的盟友。"
+                            ]
+                        },
+                        '爱情|感情|恋爱|关系|男友|女友|老公|老婆|结婚|分手': {
+                            cards: ['恋人', '圣杯二', '皇后', '圣杯国王', '圣杯六'],
+                            responses: [
+                                "心爱的孩子，恋人牌教导我们爱情的真谛：真正的爱情是两个完整的灵魂的遇见，而不是两个缺失的人的依赖。在关系中保持真诚和开放，允许对方看到真实的你，也要勇敢地去了解真实的他/她。",
+                                "亲爱的，圣杯二像两个人在水边的深度交流，象征着健康的情感连接。真正的亲密关系需要情感的投入和相互的理解。建议你在关系中多一些倾听和共情，少一些判断和指责。",
+                                "温柔的朋友，皇后牌提醒我们，爱与被爱都需要智慧。在感情中学会既给予也接受，用温柔和耐心滋养这份珍贵的情感。记住，最好的爱情是让彼此都成为更好的自己。"
+                            ]
+                        },
+                        '金钱|财富|财运|经济': {
+                            cards: ['钱币国王', '钱币四', '命运之轮'],
+                            responses: [
+                                "钱币国王提醒我们，真正的财富来自于智慧的管理和长期的投资。要学会理财和节制。",
+                                "钱币四象征着对物质的过度执着。建议您在追求财富的同时，不要忽略精神层面的富足。",
+                                "财运如命运之轮般起伏变化。保持平和的心态，机会总会在合适的时候到来。"
+                            ]
+                        }
+                    },
+                    
+                    // 东方智慧关键词
+                    easternWisdom: {
+                        '易经|八卦|阴阳|五行': [
+                            "《易经》告诉我们'穷则变，变则通，通则久'。塔罗牌与易经有着相似的智慧——都是通过符号来解读生命的奥秘。",
+                            "阴阳平衡是宇宙的根本法则。在塔罗中，每张牌都有光明和阴影面，如同阴阳互补。",
+                            "五行相生相克的道理在塔罗四大花色中也有体现：圣杯（水）、权杖（火）、钱币（土）、宝剑（金）。"
+                        ],
+                        '佛|禅|冥想|静心': [
+                            "佛家讲'心静自然凉'，塔罗解读也需要平静的心境。建议您在抽牌前先静心冥想。",
+                            "禅的智慧在于活在当下。塔罗牌也是如此，它反映的是当下的能量状态，而非固定的命运。",
+                            "冥想是与内在智慧对话的方式。每次塔罗解读前，不妨先冥想几分钟，让心归于宁静。"
+                        ],
+                        '道|老子|道德经|无为': [
+                            "老子说'道法自然'，塔罗也教导我们顺应自然规律，而非强求。",
+                            "'无为而治'的智慧在于知道何时行动，何时等待。愚者牌体现了这种顺其自然的态度。",
+                            "《道德经》云'知者不言，言者不知'。真正的智慧往往来自内心的直觉，而非外在的知识。"
+                        ]
+                    }
+                },
+                
+                // 智能回复生成
+                generateResponse: function(userMessage) {
+                    const message = userMessage.toLowerCase();
+                    const timestamp = Date.now();
+                    
+                    // 检测情绪状态
+                    this.detectMood(message);
+                    
+                    // 关键词匹配
+                    let response = this.matchKeywords(message);
+                    
+                    if (!response) {
+                        response = this.getContextualResponse();
+                    }
+                    
+                    // 根据用户偏好调整回复风格
+                    response = this.adjustResponseStyle(response);
+                    
+                    // 记录对话并学习
+                    this.conversationHistory.push({
+                        user: userMessage, 
+                        ai: response, 
+                        timestamp: timestamp,
+                        mood: this.userMoodState
+                    });
+                    
+                    this.learnFromInteraction(userMessage, response);
+                    
+                    return response;
+                },
+                
+                // 根据用户偏好调整回复风格（更温柔版）
+                adjustResponseStyle: function(response) {
+                    const greeting = this.personality.greeting[Math.floor(Math.random() * this.personality.greeting.length)];
+                    const empathy = this.personality.empathy[Math.floor(Math.random() * this.personality.empathy.length)];
+                    
+                    if (this.userPreferences.communicationStyle === 'gentle' || this.userMoodState === 'sad' || this.userMoodState === 'anxious') {
+                        // 温柔风格：添加更多情感关怀
+                        const gentlePrefixes = [
+                            `${greeting}，${empathy}。`,
+                            `让我轻轻抱一下你的心情。`,
+                            `我在这里陪着你，不用急。`,
+                            `感受到你的勇敢，愿意分享这些。`
+                        ];
+                        const prefix = gentlePrefixes[Math.floor(Math.random() * gentlePrefixes.length)];
+                        return prefix + " " + response;
+                    } else if (this.userPreferences.communicationStyle === 'direct') {
+                        // 直接风格：简洁明了但仍然温暖
+                        return response.replace(/您可以|建议您|不妨/g, '').trim();
+                    }
+                    
+                    // 默认温柔风格
+                    return `${greeting}，` + response;
+                },
+                
+                // 情绪检测（增强版）
+                detectMood: function(message) {
+                    // 复合情绪检测
+                    const emotionScores = {
+                        anxious: 0,
+                        happy: 0,
+                        confused: 0,
+                        sad: 0,
+                        angry: 0,
+                        hopeful: 0
+                    };
+                    
+                    // 焦虑相关词汇
+                    if (/焦虑|担心|紧张|恐惧|害怕|不安|心悸|恐慌|恶心/.test(message)) {
+                        emotionScores.anxious += 2;
+                    }
+                    if (/会不会|怎么办|如果|万一/.test(message)) {
+                        emotionScores.anxious += 1;
+                    }
+                    
+                    // 快乐相关词汇
+                    if (/开心|快乐|高兴|兴奋|喜悦|满意|棒|太好了|感谢/.test(message)) {
+                        emotionScores.happy += 2;
+                    }
+                    
+                    // 迷茫相关词汇
+                    if (/迷茫|困惑|不知道|不确定|疑惑|选择|决定/.test(message)) {
+                        emotionScores.confused += 2;
+                    }
+                    
+                    // 悲伤相关词汇
+                    if (/难过|伤心|痛苦|沮丧|郁闷|绝望|失望|孤单/.test(message)) {
+                        emotionScores.sad += 2;
+                    }
+                    
+                    // 愤怒相关词汇
+                    if (/生气|愤怒|烦躁|不公平|不满|讨厌|没用/.test(message)) {
+                        emotionScores.angry += 2;
+                    }
+                    
+                    // 希望相关词汇
+                    if (/希望|期待|想要|打算|计划|梦想|目标/.test(message)) {
+                        emotionScores.hopeful += 2;
+                    }
+                    
+                    // 找到最高分数的情绪
+                    let maxScore = 0;
+                    let dominantMood = 'neutral';
+                    
+                    for (let mood in emotionScores) {
+                        if (emotionScores[mood] > maxScore) {
+                            maxScore = emotionScores[mood];
+                            dominantMood = mood;
+                        }
+                    }
+                    
+                    this.userMoodState = dominantMood;
+                },
+                
+                // 关键词匹配
+                matchKeywords: function(message) {
+                    // 检查情感关键词
+                    for (let pattern in this.keywordResponses.emotions) {
+                        if (new RegExp(pattern).test(message)) {
+                            const category = this.keywordResponses.emotions[pattern];
+                            const randomResponse = category.responses[Math.floor(Math.random() * category.responses.length)];
+                            return randomResponse;
+                        }
+                    }
+                    
+                    // 检查生活领域关键词
+                    for (let pattern in this.keywordResponses.lifeAreas) {
+                        if (new RegExp(pattern).test(message)) {
+                            const category = this.keywordResponses.lifeAreas[pattern];
+                            const randomResponse = category.responses[Math.floor(Math.random() * category.responses.length)];
+                            return randomResponse;
+                        }
+                    }
+                    
+                    // 检查东方智慧关键词
+                    for (let pattern in this.keywordResponses.easternWisdom) {
+                        if (new RegExp(pattern).test(message)) {
+                            const responses = this.keywordResponses.easternWisdom[pattern];
+                            return responses[Math.floor(Math.random() * responses.length)];
+                        }
+                    }
+                    
+                    return null;
+                },
+                
+                // 上下文感知回复（增强版）
+                getContextualResponse: function() {
+                    // 分析对话历史中的模式
+                    let contextualInsight = "";
+                    
+                    if (this.conversationHistory.length > 2) {
+                        const recentMoods = this.conversationHistory.slice(-3).map(conv => conv.mood);
+                        
+                        // 检测情绪趋势
+                        if (recentMoods.filter(mood => mood === 'anxious').length >= 2) {
+                            contextualInsight = "我注意到您最近有些焦虑。让我们一起探索一些缓解的方法。";
+                        } else if (recentMoods.includes('sad') && recentMoods.includes('confused')) {
+                            contextualInsight = "您似乎正在经历一个情感上比较困难的时期。记住，这是成长的机会。";
+                        }
+                    }
+                    
+                    const baseResponses = [
+                        "从塔罗的视角看，您当前的情况反映了内在需要平衡的部分。能否告诉我更多关于您现在面临的具体情况？",
+                        "每个人的生命旅程都有其独特的节奏。您现在最关心的是哪个方面的问题呢？",
+                        "塔罗牌如同一面心灵之镜，反映的是我们内在的状态。请分享更多您的感受，让我为您提供更精准的指引。",
+                        "在东方智慧中，万事万物都有其因果联系。您提到的情况，是否有什么特别的背景或触发事件？",
+                        "真正的智慧来自于深度的自我觉察。让我们一起探索这个问题背后的深层含义。"
+                    ];
+                    
+                    // 根据用户情绪状态调整回复
+                    let moodResponse = "";
+                    switch(this.userMoodState) {
+                        case 'anxious':
+                            moodResponse = "我感受到您内心的不安。深呼吸，让我们一起慢慢探索这个问题。";
+                            break;
+                        case 'sad':
+                            moodResponse = "我理解您此刻的心情。有时候，倾诉本身就是疗愈的开始。";
+                            break;
+                        case 'angry':
+                            moodResponse = "我明白您的愤怒和挡折。这些情绪是完全可以理解的。";
+                            break;
+                        case 'hopeful':
+                            moodResponse = "您的积极态度让人鼓舞！这种正向能量会帮助您实现目标。";
+                            break;
+                        case 'confused':
+                            moodResponse = "迷茫是成长的伙伴。让我们一起理清思路。";
+                            break;
+                        default:
+                            moodResponse = "";
+                    }
+                    
+                    // 组合回复
+                    const baseResponse = baseResponses[Math.floor(Math.random() * baseResponses.length)];
+                    
+                    if (contextualInsight && moodResponse) {
+                        return contextualInsight + " " + moodResponse + " " + baseResponse;
+                    } else if (moodResponse) {
+                        return moodResponse + " " + baseResponse;
+                    } else if (contextualInsight) {
+                        return contextualInsight + " " + baseResponse;
+                    }
+                    
+                    return baseResponse;
+                }
+            };
+            
+            // 获取DOM元素
+            const drawCardBtn = document.getElementById('drawCard');
+            const buyReportBtn = document.getElementById('buyReport');
+            const shareReadingBtn = document.getElementById('shareReading');
+            const cardIcon = document.querySelector('.card-icon');
+            const cardName = document.querySelector('.card-name');
+            const cardDescription = document.querySelector('.card-description');
+            const chatMessages = document.getElementById('chatMessages');
+            const userInput = document.getElementById('userInput');
+            const sendMessageBtn = document.getElementById('sendMessage');
+            const loginBtn = document.getElementById('loginBtn');
+            const registerBtn = document.getElementById('registerBtn');
+            const authModal = document.getElementById('authModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const authForm = document.getElementById('authForm');
+            const closeBtn = document.querySelector('.close');
+            const spreadOptions = document.querySelectorAll('.spread-option');
+            
+            // 当前抽中的牌
+            let currentCard = null;
+            let isLoginMode = true;
+            
+            // 抽取塔罗牌
+            drawCardBtn.addEventListener('click', function() {
+                const randomIndex = Math.floor(Math.random() * tarotCards.length);
+                currentCard = tarotCards[randomIndex];
+                
+                // 更新卡片显示
+                cardIcon.innerHTML = `<i class="${currentCard.icon}"></i>`;
+                cardName.textContent = currentCard.name;
+                cardDescription.textContent = currentCard.description;
+                
+                // 添加一张AI欢迎消息
+                addChatMessage("我抽到了" + currentCard.name + "牌，您可以为我解读一下吗？", "user");
+                
+                // AI回复
+                setTimeout(function() {
+                    addChatMessage("您抽到了" + currentCard.name + "牌，这张牌表明" + currentCard.description + "从东方智慧的角度，这提醒我们要保持内心的平衡与和谐。", "ai");
+                }, 1000);
+            });
+            
+            // 购买深度报告
+            buyReportBtn.addEventListener('click', function() {
+                if (!currentCard) {
+                    alert('请先抽取一张塔罗牌！');
+                    return;
+                }
+                
+                alert('深度报告已解锁！\n\n' + currentCard.name + '牌完整解读：\n' + currentCard.fullDescription);
+                
+                // 添加一张AI消息
+                addChatMessage("我已解锁" + currentCard.name + "牌的深度报告，非常感谢！", "user");
+                
+                // AI回复
+                setTimeout(function() {
+                    addChatMessage("感谢您解锁深度报告！" + currentCard.name + "牌的更深层意义是：" + currentCard.fullDescription + "建议您将这些智慧应用到日常生活中，观察内心的变化。", "ai");
+                }, 1000);
+            });
+            
+            // 分享解读
+            shareReadingBtn.addEventListener('click', function() {
+                if (!currentCard) {
+                    alert('请先抽取一张塔罗牌！');
+                    return;
+                }
+                
+                if (navigator.share) {
+                    navigator.share({
+                        title: '我的塔罗牌解读',
+                        text: '我刚刚抽到了一张' + currentCard.name + '牌，快来查看我的塔罗解读！',
+                        url: window.location.href
+                    })
+                    .then(() => console.log('分享成功'))
+                    .catch((error) => console.log('分享失败', error));
+                } else {
+                    // 备用分享方式
+                    alert('分享功能在当前浏览器中不可用，您可以复制链接分享给朋友：' + window.location.href);
+                }
+            });
+            
+            // 快速回复建议（更温柔智慧）
+            const quickReplies = [
+                "🌸 最近感到心情有些繁重，想找到内心的平静",
+                "🌱 工作和生活让我感到焦虑，需要一些智慧和指引",
+                "🌙 对未来的方向感到迷茫，希望找到清晰的路径",
+                "🌿 想学习如何吸引美好的事物进入我的生活",
+                "🦋 渴望心灵成长，想了解更深层的自我",
+                "🌍 在人际关系中遇到挑战，希望找到和谐的方式"
+            ];
+            
+            // 创建快速回复按钮
+            function createQuickReplyButtons() {
+                const quickReplyContainer = document.createElement('div');
+                quickReplyContainer.className = 'quick-replies';
+                quickReplyContainer.style.cssText = `
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 8px;
+                    margin: 15px 0;
+                    padding: 10px;
+                    background: rgba(163, 201, 184, 0.1);
+                    border-radius: 10px;
+                    border: 1px dashed #a3c9b8;
+                `;
+                
+                const title = document.createElement('div');
+                title.textContent = '💡 快速提问：';
+                title.style.cssText = `
+                    width: 100%;
+                    font-size: 0.9rem;
+                    color: #3a7a6d;
+                    margin-bottom: 5px;
+                    font-weight: 500;
+                `;
+                quickReplyContainer.appendChild(title);
+                
+                quickReplies.forEach(reply => {
+                    const button = document.createElement('button');
+                    button.textContent = reply;
+                    button.style.cssText = `
+                        background: rgba(255, 255, 255, 0.9);
+                        border: 1px solid #b8d5c7;
+                        border-radius: 15px;
+                        padding: 6px 12px;
+                        font-size: 0.85rem;
+                        color: #3a7a6d;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        font-family: 'Noto Serif SC', serif;
+                    `;
+                    
+                    button.addEventListener('mouseenter', function() {
+                        this.style.background = '#4a8e7f';
+                        this.style.color = 'white';
+                        this.style.transform = 'translateY(-1px)';
+                    });
+                    
+                    button.addEventListener('mouseleave', function() {
+                        this.style.background = 'rgba(255, 255, 255, 0.9)';
+                        this.style.color = '#3a7a6d';
+                        this.style.transform = 'translateY(0)';
+                    });
+                    
+                    button.addEventListener('click', function() {
+                        userInput.value = reply;
+                        sendMessage();
+                    });
+                    
+                    quickReplyContainer.appendChild(button);
+                });
+                
+                return quickReplyContainer;
+            }
+            
+            // 打字效果模拟
+            function addTypingIndicator() {
+                const typingDiv = document.createElement('div');
+                typingDiv.classList.add('message', 'ai-message', 'typing-indicator');
+                typingDiv.innerHTML = `
+                    <div class="typing-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    疗愈师正在输入...
+                `;
+                
+                // 添加打字动画样式
+                const style = document.createElement('style');
+                style.textContent = `
+                    .typing-indicator {
+                        opacity: 0.7;
+                        font-style: italic;
+                    }
+                    .typing-dots {
+                        display: inline-block;
+                        margin-right: 8px;
+                    }
+                    .typing-dots span {
+                        display: inline-block;
+                        width: 4px;
+                        height: 4px;
+                        border-radius: 50%;
+                        background: #4a8e7f;
+                        margin: 0 1px;
+                        animation: typingDots 1.4s infinite;
+                    }
+                    .typing-dots span:nth-child(2) {
+                        animation-delay: 0.2s;
+                    }
+                    .typing-dots span:nth-child(3) {
+                        animation-delay: 0.4s;
+                    }
+                    @keyframes typingDots {
+                        0%, 60%, 100% {
+                            transform: translateY(0);
+                            opacity: 0.3;
+                        }
+                        30% {
+                            transform: translateY(-10px);
+                            opacity: 1;
+                        }
+                    }
+                `;
+                document.head.appendChild(style);
+                
+                chatMessages.appendChild(typingDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                
+                return typingDiv;
+            }
+            
+            // 发送消息功能
+            function sendMessage() {
+                const message = userInput.value.trim();
+                if (message) {
+                    addChatMessage(message, "user");
+                    userInput.value = '';
+                    
+                    // 显示打字指示器
+                    const typingIndicator = addTypingIndicator();
+                    
+                    // 模拟思考时间
+                    const thinkingTime = Math.random() * 2000 + 1500; // 1.5-3.5秒
+                    
+                    setTimeout(function() {
+                        // 移除打字指示器
+                        typingIndicator.remove();
+                        
+                        // 生成智能回复
+                        const aiResponse = aiTherapist.generateResponse(message);
+                        
+                        // 模拟逐字打字效果
+                        addChatMessageWithTypeEffect(aiResponse, "ai");
+                    }, thinkingTime);
+                }
+            }
+            
+            // 发送消息
+            sendMessageBtn.addEventListener('click', sendMessage);
+            
+            // 按回车发送消息
+            userInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessageBtn.click();
+                }
+            });
+            
+            // 添加聊天消息（即时显示）
+            function addChatMessage(text, sender) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message');
+                messageDiv.classList.add(sender === 'user' ? 'user-message' : 'ai-message');
+                messageDiv.textContent = text;
+                
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            // 添加聊天消息（打字效果）
+            function addChatMessageWithTypeEffect(text, sender) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message');
+                messageDiv.classList.add(sender === 'user' ? 'user-message' : 'ai-message');
+                
+                chatMessages.appendChild(messageDiv);
+                
+                let index = 0;
+                const typingSpeed = 30; // 打字速度（毫秒）
+                
+                function typeNextCharacter() {
+                    if (index < text.length) {
+                        messageDiv.textContent = text.substring(0, index + 1);
+                        index++;
+                        chatMessages.scrollTop = chatMessages.scrollHeight;
+                        setTimeout(typeNextCharacter, typingSpeed);
+                    }
+                }
+                
+                typeNextCharacter();
+            }
+            
+            // 用户账户系统
+            loginBtn.addEventListener('click', function() {
+                isLoginMode = true;
+                modalTitle.textContent = '登录';
+                authModal.style.display = 'block';
+            });
+            
+            registerBtn.addEventListener('click', function() {
+                isLoginMode = false;
+                modalTitle.textContent = '注册';
+                authModal.style.display = 'block';
+            });
+            
+            closeBtn.addEventListener('click', function() {
+                authModal.style.display = 'none';
+            });
+            
+            window.addEventListener('click', function(event) {
+                if (event.target == authModal) {
+                    authModal.style.display = 'none';
+                }
+            });
+            
+            authForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                
+                if (isLoginMode) {
+                    // 登录逻辑
+                    loginUser(email, password);
+                } else {
+                    // 注册逻辑
+                    registerUser(email, password);
+                }
+            });
+            
+            function loginUser(email, password) {
+                // 模拟登录过程
+                const users = JSON.parse(localStorage.getItem('tarotUsers')) || [];
+                const user = users.find(u => u.email === email && u.password === password);
+                
+                if (user) {
+                    alert('登录成功！');
+                    authModal.style.display = 'none';
+                    // 更新UI显示用户已登录
+                    updateUIForLoggedInUser(user);
+                } else {
+                    alert('邮箱或密码错误！');
+                }
+            }
+            
+            function registerUser(email, password) {
+                // 模拟注册过程
+                const users = JSON.parse(localStorage.getItem('tarotUsers')) || [];
+                
+                if (users.some(u => u.email === email)) {
+                    alert('该邮箱已注册！');
+                    return;
+                }
+                
+                users.push({ email, password, readings: [] });
+                localStorage.setItem('tarotUsers', JSON.stringify(users));
+                
+                alert('注册成功！');
+                authModal.style.display = 'none';
+            }
+            
+            function updateUIForLoggedInUser(user) {
+                // 更新UI显示用户已登录
+                loginBtn.style.display = 'none';
+                registerBtn.style.display = 'none';
+                
+                const userMenu = document.createElement('div');
+                userMenu.className = 'user-menu';
+                userMenu.innerHTML = `
+                    <span>欢迎，${user.email}</span>
+                    <button id="logoutBtn" class="btn btn-secondary">退出</button>
+                `;
+                document.querySelector('.user-actions').appendChild(userMenu);
+                
+                document.getElementById('logoutBtn').addEventListener('click', function() {
+                    localStorage.removeItem('currentUser');
+                    window.location.reload();
+                });
+            }
+            
+            // 牌阵选择功能
+            spreadOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    spreadOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    updateSpreadUI(this.dataset.spread);
+                });
+            });
+            
+            function updateSpreadUI(spreadType) {
+                const tarotCards = document.querySelector('.tarot-cards');
+                tarotCards.innerHTML = '';
+                
+                switch(spreadType) {
+                    case 'single':
+                        tarotCards.innerHTML = '<div class="mini-card">单张牌</div>';
+                        break;
+                    case 'three':
+                        tarotCards.innerHTML = `
+                            <div class="mini-card">过去</div>
+                            <div class="mini-card">现在</div>
+                            <div class="mini-card">未来</div>
+                        `;
+                        break;
+                    case 'celtic':
+                        tarotCards.innerHTML = `
+                            <div class="mini-card">1</div>
+                            <div class="mini-card">2</div>
+                            <div class="mini-card">3</div>
+                            <div class="mini-card">4</div>
+                            <div class="mini-card">5</div>
+                            <div class="mini-card">6</div>
+                            <div class="mini-card">7</div>
+                            <div class="mini-card">8</div>
+                            <div class="mini-card">9</div>
+                            <div class="mini-card">10</div>
+                        `;
+                        break;
+                }
+            }
+            
+            // 初始化聊天系统
+            function initializeChatSystem() {
+                // 加载用户数据
+                aiTherapist.loadUserData();
+                
+                // 在聊天输入区域上方添加快速回复按钮
+                const chatInputDiv = document.querySelector('.chat-input');
+                const quickReplyButtons = createQuickReplyButtons();
+                chatInputDiv.parentNode.insertBefore(quickReplyButtons, chatInputDiv);
+                
+                // 添加个性化欢迎消息
+                setTimeout(() => {
+                    let welcomeMessage = "🌿 你可以点击上方的温柔提问，或者自由地分享你的心声。";
+                    
+                    // 根据历史对话个性化欢迎语
+                    if (aiTherapist.conversationHistory.length > 0) {
+                        const lastConversation = aiTherapist.conversationHistory[aiTherapist.conversationHistory.length - 1];
+                        const timeSinceLastChat = Date.now() - lastConversation.timestamp;
+                        
+                        if (timeSinceLastChat < 24 * 60 * 60 * 1000) { // 24小时内
+                            const greeting = aiTherapist.personality.greeting[Math.floor(Math.random() * aiTherapist.personality.greeting.length)];
+                            welcomeMessage = `🌟 ${greeting}，欢迎回到我们的心灵空间。我仍然记得上次你分享的心声，今天你的心情如何？`;
+                        }
+                        
+                        // 根据用户关注的主题提供个性化建议
+                        if (aiTherapist.userPreferences.favoriteTopics.length > 0) {
+                            const topics = aiTherapist.userPreferences.favoriteTopics;
+                            if (topics.includes('career')) {
+                                welcomeMessage += " 你的工作和事业最近怎么样？";
+                            } else if (topics.includes('love')) {
+                                welcomeMessage += " 你的心情和情感生活还好吗？";
+                            } else if (topics.includes('family')) {
+                                welcomeMessage += " 你和家人的关系还和谐吗？";
+                            }
+                        }
+                    }
+                    
+                    welcomeMessage += " 我会用塔罗的古老智慧和东方哲学的温柔教导，陪伴你在这段旅程中找到属于你的答案。";
+                    
+                    addChatMessageWithTypeEffect(welcomeMessage, "ai");
+                }, 2500);
+            }
+            
+            // 对话管理功能
+            document.getElementById('viewHistoryBtn')?.addEventListener('click', function() {
+                if (aiTherapist.conversationHistory.length === 0) {
+                    alert('您还没有任何对话记录。');
+                    return;
+                }
+                
+                let historyText = '📜 您的对话历史：\n\n';
+                aiTherapist.conversationHistory.slice(-10).forEach((conv, index) => {
+                    const date = new Date(conv.timestamp).toLocaleString();
+                    historyText += `${index + 1}. ${date}\n`;
+                    historyText += `💬 您: ${conv.user}\n`;
+                    historyText += `🧘 疗愈师: ${conv.ai.substring(0, 100)}...\n`;
+                    historyText += `😊 情绪: ${conv.mood}\n\n`;
+                });
+                
+                alert(historyText);
+            });
+            
+            document.getElementById('clearHistoryBtn')?.addEventListener('click', function() {
+                if (confirm('确定要清空所有对话记录吗？此操作不可恢复。')) {
+                    aiTherapist.conversationHistory = [];
+                    aiTherapist.userPreferences = {
+                        favoriteTopics: [],
+                        communicationStyle: 'balanced',
+                        wisdomSource: 'mixed'
+                    };
+                    aiTherapist.saveUserData();
+                    alert('对话记录已清空。');
+                }
+            });
+            
+            document.getElementById('exportChatBtn')?.addEventListener('click', function() {
+                if (aiTherapist.conversationHistory.length === 0) {
+                    alert('没有对话记录可导出。');
+                    return;
+                }
+                
+                let exportText = '塔罗疗愈师对话记录\n';
+                exportText += '==================\n\n';
+                
+                aiTherapist.conversationHistory.forEach((conv, index) => {
+                    const date = new Date(conv.timestamp).toLocaleString();
+                    exportText += `对话 ${index + 1} - ${date}\n`;
+                    exportText += `情绪状态: ${conv.mood}\n`;
+                    exportText += `您: ${conv.user}\n`;
+                    exportText += `疗愈师: ${conv.ai}\n`;
+                    exportText += '\n---\n\n';
+                });
+                
+                // 创建下载链接
+                const blob = new Blob([exportText], { type: 'text/plain;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `塔罗疗愈师对话记录_${new Date().toISOString().split('T')[0]}.txt`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            });
+            
+            // 检查用户是否已登录
+            const currentUser = localStorage.getItem('currentUser');
+            if (currentUser) {
+                updateUIForLoggedInUser(JSON.parse(currentUser));
+            }
+        });
+    </script>
+</body>
+</html>
